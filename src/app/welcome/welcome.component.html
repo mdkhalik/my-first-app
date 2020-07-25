@@ -1,0 +1,33 @@
+<!-- Welcome {{name}} How are you and thank you to visit us
+<a routerLink="/todos">Click here</a>
+<button (click)="getWelcomeData()" type="button" class="btn btn-success">Get Welcome Message</button>
+<div class="container" *ngIf="welcomeMessageFromService" >
+    Your message here {{  welcomeMessageFromService }}
+</div>
+<div class="container" *ngIf="errorMessageFromService" >
+    Error Here {{errorMessageFromService}}
+</div> -->
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card-header">
+      ALL COLLECTIONS
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Dairy Product</li>
+      <li class="list-group-item">Bakery Items</li>
+      <li class="list-group-item">Fruits & Vegetables</li>
+      <li class="list-group-item">Cereals & Pulses</li>
+      <li class="list-group-item">New Product</li>
+    </ul>
+  </div>
+  <!-- <div class="col-sm-9"> -->
+  <div class="card col-sm-9 row- bg-dark text-white">
+    <img class="card-img" src="Desert.jpg" alt="Card image">
+    <!-- <div class="card-img-overlay">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text">Last updated 3 mins ago</p>
+      </div> -->
+  </div>
+  <!-- </div> -->
+</div>

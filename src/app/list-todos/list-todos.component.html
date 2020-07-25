@@ -1,0 +1,19 @@
+<p>list-todos works!</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>deptname</th>
+            <!-- <th>joiningDate</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student1 of student">
+            <td>{{student1.studentId}}</td>
+            <td>{{student1.name}}</td>
+            <td>{{student1.course}}</td>
+            <!-- <td>{{employee1.joiningDate}}</td> -->
+        </tr>
+    </tbody>
+</table>
