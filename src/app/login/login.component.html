@@ -6,11 +6,13 @@
                 <br>
                 <form>
                     <small *ngIf="inValidLogin">{{errorMessage}}</small>
+                    <br>
                     Username : <input type="text" name="name" value="{{username}}" [(ngModel)]="username">
                     <br><br>
                     Password : <input type="password" name="password" value="{{password}}" [(ngModel)]="password">
                     <br><br>
                     <button (click)="handleLogin()">Sign in</button>
+                    <!-- <a href="/signup" >Sign Up</a> -->
                     <!-- <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck1">
                         <label class="form-check-label" for="gridCheck1">

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">MillatMart</a>
+    <a class="navbar-brand" href="assets\millat4.JPG"><img src="assets\millatMart.ico" alt="MillatMart" /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,6 +28,10 @@
             </li>
         </ul>
         <ul class="navbar-nav navbar-collapse justify-content-end">
+            <!-- <li class="nav-item">
+                <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
+                    routerLink="/login">Welcome {{name}}</a>
+            </li> -->
             <li class="nav-item">
                 <a *ngIf="!hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
                     routerLink="/login">Login</a>

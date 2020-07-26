@@ -9,9 +9,11 @@ import { RouteGuardService } from './service/route-guard.service';
 import { ProductComponent } from './product/product.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
+    { path: 'signup', component: SignupComponent },
     { path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGuardService] },
     { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService] },
     { path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService] },
