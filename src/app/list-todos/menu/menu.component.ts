@@ -9,10 +9,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
   isLoggedIn: boolean = false;
+  username1 = '';
   constructor(public hardCodedAuthenticationService: HardCodedAuthenticationServiceService) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.hardCodedAuthenticationService.isUserLoggedIn();
+    this.username1 = sessionStorage.getItem('authenticatedUser')
   }
 
 }

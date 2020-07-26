@@ -28,10 +28,14 @@
             </li>
         </ul>
         <ul class="navbar-nav navbar-collapse justify-content-end">
-            <!-- <li class="nav-item">
+            <form *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <li class="nav-item">
                 <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
-                    routerLink="/login">Welcome {{name}}</a>
-            </li> -->
+                    routerLink="/aboutus">Welcome {{username1}}</a>
+            </li>
             <li class="nav-item">
                 <a *ngIf="!hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
                     routerLink="/login">Login</a>
