@@ -1,3 +1,9 @@
+Issue :ng serve : Could not find module “@angular-devkit/build-angular”
+reproduce steps: download zip file of angular project from github and import in local
+
+Solution: in angular project dir type below command
+npm install --save-dev @angular-devkit/build-angular
+
 # MyFirstApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
