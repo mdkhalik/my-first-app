@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodosDataServiceService } from '../service/data/todos-data-service.service';
+import { ProductComponent } from '../product/product.component';
 export class Employee {
   constructor(
     public id: number,
@@ -16,6 +17,18 @@ export class Student {
     public course: string
   ) { }
 }
+export class Product
+{
+  constructor(
+    public productid: number,
+    public productname: string,
+    public price: number,
+    public category: string,
+    public availability: string,
+    public cod: string,
+    public insertiondate: Date
+  ){}
+}
 @Component({
   selector: 'app-list-todos',
   templateUrl: './list-todos.component.html',
@@ -30,6 +43,7 @@ export class ListTodosComponent implements OnInit {
 
   employee: Employee[];
   student: Student[];
+  products: Product[];
   constructor(private todoDataService: TodosDataServiceService) { }
 
   ngOnInit(): void {
@@ -45,6 +59,13 @@ export class ListTodosComponent implements OnInit {
         { 
           console.log('response body'+response.body);
           this.student = response;
+         }
+    );
+    this.todoDataService.retrieveAllProducts().subscribe(
+      (response: any) =>
+        { 
+          console.log('response body'+response.body);
+          this.products = response;
          }
     );
   //  this.todoDataService.retrieveAllTodos('in28minutes').subscribe(
