@@ -1,0 +1,15 @@
+import { Injectable } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Product } from '../list-todos/list-todos.component';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SearchDataServiceService {
+
+  constructor(public http: HttpClient) { }
+
+  getProductFromSearchBox(productName: string){
+    return this.http.get<Product>(`http://localhost:8088/products/product/${productName}`);
+  }
+}
