@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Product } from '../list-todos/list-todos.component';
+import { Product } from '../product/product.component';
+//import { Product } from '../list-todos/list-todos.component';
 
 @Injectable({
   providedIn: 'root'

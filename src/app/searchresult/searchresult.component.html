@@ -1,1 +1,4 @@
-<p>searchresult works!</p>
+<form *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search By Productname" aria-label="Search">
+    <button (click)="handleSearch()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>

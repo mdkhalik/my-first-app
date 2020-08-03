@@ -1,29 +1,28 @@
-<div class='container-fluid'>
-  <div class="row" style="padding: 20px;">
-    <div class="col-sm-12 btn btn-success">
-      Use Bootstrap carousel in Angular 8 Project
-    </div>
-  </div>
-  <div class='col-12'>
-    <ngb-carousel>
-      <ng-template ngbSlide>
-        <img src="assets\Desert.jpg" alt="Channai Metro">
-        <div class="carousel-caption">
-          <h3 style="color: yellow">Channai Metro</h3>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <img src="assets\millat4.JPG" alt="Jaipur Metro">
-        <div class="carousel-caption">
-          <h3 style="color: yellow">Jaipur Metro</h3>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <img src="assets\logo.JPG" alt="Mumbai Metro">
-        <div class="carousel-caption">
-          <h3 style="color: yellow">Mumbai Metro</h3>
-        </div>
-      </ng-template>
-    </ngb-carousel>
-  </div>
-</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Purchase Amount</th>
+            <th>Category</th>
+            <th>Availability</th>
+            <th>Cash-On-Delivery</th>
+            <th>Availability Date</th>
+            <th>Action</th>
+            <!-- <th>joiningDate</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.productid}}</td>
+            <td>{{product.productname}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.availability}}</td>
+            <td>{{product.cod}}</td>
+            <td>{{product.insertiondate}}</td>
+            <td><button (click)="deleteProduct(product.productid)">Add to Cart</button></td>
+            <!-- <td>{{employee1.joiningDate}}</td> -->
+        </tr>
+    </tbody>
+</table>

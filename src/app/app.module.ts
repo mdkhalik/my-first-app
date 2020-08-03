@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
-import { ListTodosComponent } from './list-todos/list-todos.component';
+//import { ListTodosComponent } from './list-todos/list-todos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './list-todos/menu/menu.component';
 import { FooterComponent } from './list-todos/footer/footer.component';
@@ -26,7 +26,7 @@ import { SearchresultComponent } from './searchresult/searchresult.component';
     WelcomeComponent,
     LoginComponent,
     ErrorComponent,
-    ListTodosComponent,
+   // ListTodosComponent,
     MenuComponent,
     FooterComponent,
     LogoutComponent,

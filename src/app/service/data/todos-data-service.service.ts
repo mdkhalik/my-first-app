@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Employee, Student, Product } from 'src/app/list-todos/list-todos.component';
+import { Employee, Student } from 'src/app/product/product.component';
+import { Product } from 'src/app/list-todos/menu/menu.component';
+//import { Employee, Student, Product } from 'src/app/list-todos/list-todos.component';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +27,10 @@ export class TodosDataServiceService {
   retrieveAllProducts() {
     console.log('making rest get call');
     return this.http.get<Product[]>('http://localhost:8088/products/products');
+  }
+
+  deleteProducts(productid: number){
+    console.log(`deleted ${productid}`);
+    return this.http.delete(`http://localhost:8088/products/delete/${productid}`)
   }
 }
