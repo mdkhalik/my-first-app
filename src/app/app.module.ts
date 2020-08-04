@@ -19,6 +19,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductComponent } from './product/product.component';
 import { SignupComponent } from './signup/signup.component';
 import { SearchresultComponent } from './searchresult/searchresult.component';
+import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { SearchresultComponent } from './searchresult/searchresult.component';
     ContactComponent,
     ProductComponent,
     SignupComponent,
-    SearchresultComponent
+    SearchresultComponent,
+    HomeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

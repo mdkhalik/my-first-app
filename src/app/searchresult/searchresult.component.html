@@ -1,4 +1,30 @@
-<form *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search By Productname" aria-label="Search">
-    <button (click)="handleSearch()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form>
+<!-- <div>
+    <form *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search By Productname" aria-label="Search">
+        <button (click)="handleSearch()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div> -->
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+        <form *ngIf="hardCodedAuthenticationService.isUserLoggedIn()">
+            <div class="row no-gutters align-items-center">
+                <div class="col-auto">
+                    <i class="fas fa-search h4 text-body"></i>
+                </div>
+                <!--end of col-->
+                <div class="col">
+                    <input class="form-control form-control-lg form-control-borderless" type="search"
+                        placeholder="Search topics or keywords">
+                </div>
+                <!--end of col-->
+                <div class="col-auto">
+                    <button (click)="handleSearch()" class="btn btn-lg btn-success" type="submit">Search</button>
+                </div>
+                <!--end of col-->
+            </div>
+        </form>
+    </div>
+    <!--end of col-->
+</div>
+<br>
