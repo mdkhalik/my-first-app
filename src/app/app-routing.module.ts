@@ -12,10 +12,12 @@ import { AboutComponent } from './about/about.component';
 import { SignupComponent } from './signup/signup.component';
 import { SearchresultComponent } from './searchresult/searchresult.component';
 import { SearchComponent } from './search/search.component';
+import { SampletestComponent } from './sampletest/sampletest.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
+    { path: 'sample', component: SampletestComponent },
     { path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGuardService] },
    // { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService] },
     { path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService] },

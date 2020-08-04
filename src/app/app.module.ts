@@ -21,6 +21,8 @@ import { SignupComponent } from './signup/signup.component';
 import { SearchresultComponent } from './searchresult/searchresult.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { SampletestComponent } from './sampletest/sampletest.component';
+import { Sampletest2Component } from './sampletest2/sampletest2.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { SearchComponent } from './search/search.component';
     SignupComponent,
     SearchresultComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    SampletestComponent,
+    Sampletest2Component
   ],
   imports: [
     BrowserModule,

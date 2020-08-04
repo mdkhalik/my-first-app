@@ -34,15 +34,16 @@ export class MenuComponent implements OnInit {
   }
 
   handleSearch(): void {
-    if (this.searchDataServiceService.getProductFromSearchBox('Co0py') != null) {
-      this.searchDataServiceService.getProductFromSearchBox('Co0py').subscribe(
-        (response: any) => {
-          console.log('response body' + response.body);
-          this.product = response;
-        }
-      );
-      this.router.navigate(['search'])
+    if(this.searchDataServiceService.getProductFromSearchBox('Co0py')!=null){
+    this.searchDataServiceService.getProductFromSearchBox('Co0py').subscribe(
+      (response: any) => {
+        console.log('response body' + response.body);
+        this.product = response;
+      }
+    );
+    this.router.navigate(['search'])
     }
+
   }
 
 }
