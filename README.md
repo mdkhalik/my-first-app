@@ -1,3 +1,7 @@
+for Bootsrapt Crousel on angular version 9, follow the below process
+
+https://www.c-sharpcorner.com/article/how-to-use-bootstrap-carousel-in-angular-8/
+
 Issue :ng serve : Could not find module “@angular-devkit/build-angular”
 reproduce steps: download zip file of angular project from github and import in local
 
