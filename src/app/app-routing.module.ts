@@ -15,7 +15,6 @@ import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: '/', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGuardService] },
    // { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService] },
