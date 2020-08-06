@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="navbar-brand" href="assets\millat4.JPG"><img
             src="assets\millatMart.ico" alt="MillatMart" /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -23,10 +24,10 @@
                 <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
                     routerLink="/aboutus">About</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
                     routerLink="/help">Help</a>
-            </li>
+            </li> -->
         </ul>
         <ul class="navbar-nav navbar-collapse justify-content-end">
             <!-- <form *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="form-inline my-2 my-lg-0">
@@ -50,4 +51,5 @@
         </ul>
     </div>
 </nav>
+</div>
 <br>

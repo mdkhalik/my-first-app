@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Employee, Student } from 'src/app/product/product.component';
 import { Product } from 'src/app/list-todos/menu/menu.component';
 //import { Employee, Student, Product } from 'src/app/list-todos/list-todos.component';
@@ -25,7 +25,13 @@ export class TodosDataServiceService {
   }
 
   retrieveAllProducts() {
+    // let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader();
+
+    // let headers = new HttpHeaders({
+    //   Authorization: basicAuthHeaderString
+    // })
     console.log('making rest get call');
+    //return this.http.get<Product[]>('http://localhost:8088/products/products',{headers});
     return this.http.get<Product[]>('http://localhost:8088/products/products');
   }
 
@@ -33,4 +39,11 @@ export class TodosDataServiceService {
     console.log(`deleted ${productid}`);
     return this.http.delete(`http://localhost:8088/products/delete/${productid}`)
   }
+
+  // createBasicAuthenticationHttpHeader(){
+  //   let username = 'user';
+  //   let password = '98a6b4a3-0e34-4635-a95a-9b52d0ea0dac';
+  //   let basicAuthHeaderString = 'Basic '+window.btoa(username+":"+password);
+  //   return basicAuthHeaderString;
+  // }
 }

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -23,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { SampletestComponent } from './sampletest/sampletest.component';
 import { Sampletest2Component } from './sampletest2/sampletest2.component';
+import { HttpInterceptorBasicAuthService } from './service/http/http-interceptor-basic-auth.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,9 @@ import { Sampletest2Component } from './sampletest2/sampletest2.component';
     NgbModule,
     RouterModule.forRoot([])
   ],
-  providers: [],
+  providers: [
+     //{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService,multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

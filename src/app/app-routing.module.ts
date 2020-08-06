@@ -13,14 +13,17 @@ import { SignupComponent } from './signup/signup.component';
 import { SearchresultComponent } from './searchresult/searchresult.component';
 import { SearchComponent } from './search/search.component';
 import { SampletestComponent } from './sampletest/sampletest.component';
+import { Sampletest2Component } from './sampletest2/sampletest2.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
-    { path: 'sample', component: SampletestComponent },
-    { path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGuardService] },
-   // { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService] },
-    { path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService] },
+    { path: 'sample', component: SampletestComponent, canActivate: [RouteGuardService] },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: 'sample2', component: Sampletest2Component },
+    { path: 'welcome/:name', component: WelcomeComponent },
+    // { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService] },
+    { path: 'logout', component: LogoutComponent },
     { path: 'product', component: ProductComponent, canActivate: [RouteGuardService] },
     { path: 'contact', component: ContactComponent, canActivate: [RouteGuardService] },
     { path: 'aboutus', component: AboutComponent, canActivate: [RouteGuardService] },
