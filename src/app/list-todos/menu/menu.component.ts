@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HardCodedAuthenticationServiceService } from 'src/app/service/hard-coded-authentication-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SearchDataServiceService } from 'src/app/service/search-data-service.service';
+import { BasicAuthenticationService } from 'src/app/service/basic-authentication.service';
 
 export class Product {
   constructor(
@@ -26,6 +27,7 @@ export class MenuComponent implements OnInit {
   product = Product;
   constructor(public hardCodedAuthenticationService: HardCodedAuthenticationServiceService,
     public searchDataServiceService: SearchDataServiceService,
+    public basicAuthenticationService: BasicAuthenticationService,
     public router: Router) { }
 
   ngOnInit(): void {

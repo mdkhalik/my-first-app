@@ -20,7 +20,7 @@ export class BasicAuthenticationService {
     console.log('inside retrieveBasicAuthService() password=' + password);
 
     let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
-console.log('basicauthheaderstring'+basicAuthHeaderString)
+    console.log('basicauthheaderstring' + basicAuthHeaderString)
     let headers = new HttpHeaders({
       Authorization: basicAuthHeaderString
     })
