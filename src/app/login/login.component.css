@@ -1,0 +1,26 @@
+body{
+    background: #0F3037;
+    background: linear-gradient(to right,#2c5364,#203a43,#0f2027);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    /* background-color: #93a2a8; */
+}
+.blockquote >p{
+    animation: Slide_Up 1.4s ease;
+}
+
+.blockquote >form >p{
+    animation: Slide_Up 1.4s ease;
+}
+
+@keyframes Slide_Up{
+    0%{
+        transform: translateY(250px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
