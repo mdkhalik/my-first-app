@@ -1,5 +1,5 @@
 <!-- <div>
-    <form *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="form-inline my-2 my-lg-0">
+    <form *ngIf="basicAuthService.isUserLoggedIn()" class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search By Productname" aria-label="Search">
         <button (click)="handleSearch()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
@@ -9,7 +9,7 @@
 </head>
 <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-8">
-        <form *ngIf="hardCodedAuthenticationService.isUserLoggedIn()">
+        <form *ngIf="basicAuthService.isUserLoggedIn()">
             <div class="row no-gutters align-items-center">
                 <div class="col-auto">
                     <i class="fas fa-search h4 text-body"></i>

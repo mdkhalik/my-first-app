@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HardCodedAuthenticationServiceService } from '../service/hard-coded-authentication-service.service';
+//import { HardCodedAuthenticationServiceService } from '../service/hard-coded-authentication-service.service';
 import { SearchDataServiceService } from '../service/search-data-service.service';
 import { Router } from '@angular/router';
+import { BasicAuthenticationService } from '../service/basic-authentication.service';
 
 export class Product {
   constructor(
@@ -24,12 +25,13 @@ export class SearchresultComponent implements OnInit {
   isLoggedIn: boolean = false;
   username1 = '';
   product = Product;
-  constructor(public hardCodedAuthenticationService: HardCodedAuthenticationServiceService,
+  constructor(//public hardCodedAuthenticationService: HardCodedAuthenticationServiceService,
+    public basicAuthService: BasicAuthenticationService,
     public searchDataServiceService: SearchDataServiceService,
     public router: Router) { }
 
   ngOnInit(): void {
-    this.isLoggedIn = this.hardCodedAuthenticationService.isUserLoggedIn();
+    this.isLoggedIn = this.basicAuthService.isUserLoggedIn();
     this.username1 = sessionStorage.getItem('authenticatedUser')
   }
 

@@ -15,16 +15,19 @@ export class BasicAuthenticationService {
   //   createBasicAuthenticationHttpHeader(){
   //  }
 
+  authenticate(username: string, password: string) {
+    if (username === 'Manzer' && password === 'Nishi') {
+      sessionStorage.setItem('authenticatedUser', username)
+      return true;
+    }
+    return false;
+  }
+  
   retrieveBasicAuthService(username: any, password: any) {
-    console.log('inside retrieveBasicAuthService()=' + username);
-    console.log('inside retrieveBasicAuthService() password=' + password);
-
     let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
-    console.log('basicauthheaderstring' + basicAuthHeaderString)
     let headers = new HttpHeaders({
       Authorization: basicAuthHeaderString
     })
-    console.log('making rest get call');
     //return this.http.get<Product[]>('http://localhost:8088/products/products',{headers});
     return this.http.get<AuthenticationBean>(`http://localhost:8088/basicauth`, { headers })
       .pipe(
@@ -32,8 +35,6 @@ export class BasicAuthenticationService {
           data => {
             sessionStorage.setItem('authenticatedUser', username)
             sessionStorage.setItem('token', basicAuthHeaderString)
-            console.log('sessionstorage=' + sessionStorage.getItem('AuthenticatedUser'))
-            console.log(data)
             return data;
           }
         )
@@ -56,5 +57,18 @@ export class BasicAuthenticationService {
 
   logout() {
     sessionStorage.removeItem('authenticatedUser');
+  }
+
+  retrieveJWTAuthService(username: any, password: any) {
+    return this.http.post<any>(`http://localhost:8088/authenticate`, { username, password })
+      .pipe(
+        map(
+          data => {
+            sessionStorage.setItem('authenticatedUser', username)
+            sessionStorage.setItem('token', `Bearer ${data.token}`)
+            return data;
+          }
+        )
+      );
   }
 }
