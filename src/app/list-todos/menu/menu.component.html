@@ -45,6 +45,10 @@
                     routerLink="/login">Login</a>
             </li>
             <li class="nav-item">
+                <a *ngIf="!basicAuthenticationService.isUserLoggedIn()" class="nav-link"
+                    routerLink="/signup">SignUp</a>
+            </li>
+            <li class="nav-item">
                 <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="nav-link" routerLink="/logout"
                     tabindex="-1" aria-disabled="true">Logout</a>
             </li>
