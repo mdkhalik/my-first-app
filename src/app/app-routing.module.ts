@@ -14,6 +14,7 @@ import { SearchresultComponent } from './searchresult/searchresult.component';
 import { SearchComponent } from './search/search.component';
 import { SampletestComponent } from './sampletest/sampletest.component';
 import { Sampletest2Component } from './sampletest2/sampletest2.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'sample2', component: Sampletest2Component },
     { path: 'welcome/:name', component: WelcomeComponent },
+    { path: 'home/:name', component: HomeComponent },
     // { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService] },
     { path: 'logout', component: LogoutComponent },
     { path: 'product', component: ProductComponent, canActivate: [RouteGuardService] },

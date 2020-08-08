@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
    handleLogin(): void {
      if (this.basicAuthService.authenticate(this.username, this.password)) {
-       this.router.navigate(['welcome', this.username])
+       this.router.navigate(['home', this.username])
        this.inValidLogin = false;
      } else {
        this.inValidLogin = true;
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
         console.log('data' + data)
         if (data['name'] != null) {
           console.log(`data before navigation${data}`)
-          this.router.navigate(['../welcome', this.username])
+          this.router.navigate(['../home', this.username])
           //working fine if authguard not availablethis.router.navigate(['../sample2'])
           //this.router.navigateByUrl(['/welcome', this.username])
           //this.router.navigate(["../product"])
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         console.log('data' + data)
         //if (data['name'] != null) {
         console.log(`data before navigation${data}`)
-        this.router.navigate(['../welcome', this.username])
+        this.router.navigate(['../home', this.username])
         //working fine if authguard not availablethis.router.navigate(['../sample2'])
         //this.router.navigateByUrl(['/welcome', this.username])
         //this.router.navigate(["../product"])

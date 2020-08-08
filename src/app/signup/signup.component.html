@@ -23,8 +23,8 @@
 <!-- app.component.html -->
 
 <!-- https://www.codingame.com/playgrounds/8012/angular-form-validation-example-tutorial -->
-<div class="container">
-  <div class="col-12 col-md-10 col-lg-8 justify-content-center">
+<div class="container justify-content-center">
+<!-- <div class=""> -->
   <br>
   <h1>
     <!-- Welcome to {{title}}!! -->
@@ -105,11 +105,11 @@
       </div>
     </div> -->
     <button type="submit" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
-      Save
+      Submit
     </button>
   </form>
   <br />
   <p>Form value: {{ angForm.value | json }}</p>
   <p>Form status: {{ angForm.status | json }}</p>
-</div>
+<!-- </div> -->
 </div>

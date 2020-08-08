@@ -1,0 +1,29 @@
+body{
+    background: #2c5364;
+    /* background: #0F3037;
+    background: linear-gradient(to right,#2c5364,#203a43,#0f2027); */
+}
+
+.card{
+    background: #2c5364;
+    /* background: #0F3037;
+    background: linear-gradient(to right,#2c5364,#203a43,#0f2027); */
+}
+.card-deck{
+    background: #2c5364;
+    /* background: #0F3037;
+    background: linear-gradient(to right,#2c5364,#203a43,#0f2027); */
+}
+
+.card-deck >div >img{
+    animation: Slide_Up 1.4s ease;
+}
+
+@keyframes Slide_Up{
+    0%{
+        transform: translateY(250px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
