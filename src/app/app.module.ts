@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -24,6 +24,7 @@ import { SearchComponent } from './search/search.component';
 import { SampletestComponent } from './sampletest/sampletest.component';
 import { Sampletest2Component } from './sampletest2/sampletest2.component';
 import { HttpInterceptorBasicAuthService } from './service/http/http-interceptor-basic-auth.service';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HttpInterceptorBasicAuthService } from './service/http/http-interceptor
     HomeComponent,
     SearchComponent,
     SampletestComponent,
-    Sampletest2Component
+    Sampletest2Component,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { HttpInterceptorBasicAuthService } from './service/http/http-interceptor
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    ReactiveFormsModule
   ],
   providers: [
      //{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService,multi: true}

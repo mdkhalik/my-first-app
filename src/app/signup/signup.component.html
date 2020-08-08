@@ -1,97 +1,115 @@
-<!-- <div class="col justify-content-center">
-    <div class="card">
-        <div class="card text-white bg-info mb-3 p-6 text-center">
-            <blockquote class="blockquote mb-0 card-body">
-                <p> Login</p>
-                <br>
-                <form>
-                    <br>
-                    Enter Username : <input type="text" name="name" value="{{username}}" />
-                    <br><br>
-                    Enter Password : <input type="password" name="password" value="{{password}}"
-                        [(ngModel)]="password" />
-                    <br><br>
-                    Re-enter Password : <input type="password" name="password2" value="{{re-enter passowrd2}}" />
-                    <br><br>
-                    Email : <input type="email" name="email" value="{{email}}" />
-                    <br><br>
-                    Mobile Number : <input type="number" name="mobile" value="{{mobile}}" />
-                    <br><br>
-                    <!-- <button (click)="handleLogin()">Sign Up</button> -->
-                    <!-- <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck1">
-                        <label class="form-check-label" for="gridCheck1">
-                                Example checkbox
-                        </label>
-                    </div>
+<!-- <div class="container">
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && todoForm.invalid">Enter valid values</div>
+  <div class="alert alert-warning" *ngIf="description.dirty && description.invalid">Enter valid values</div>
+  <div class="alert alert-warning" *ngIf="targetdate.dirty && targetdate.invalid">Enter valid values</div>
+  <form (ngSubmit)="!todoForm.inValid && saveTodo()" #todoForm="ngForm">
+    <fieldset class="form-group">
+      <label>Description</label>
+      <input type="text" [(ngModel)]="todo.description" class="form-control"
+      name="description" #description="ngModel" required="required" minlength="5">
+    </fieldset>
 
-                </form>
-            </blockquote>
-        </div>
-    </div>
-</div> -->
-<form>
-    <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="validationServer01">First name</label>
-        <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" value="Mark" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="validationServer02">Last name</label>
-        <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" value="Otto" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="validationServerUsername">Username</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupPrepend3">@</span>
-          </div>
-          <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
-          <div class="invalid-feedback">
-            Please choose a username.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="col-md-6 mb-3">
-        <label for="validationServer03">City</label>
-        <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="City" required>
-        <div class="invalid-feedback">
-          Please provide a valid city.
-        </div>
-      </div>
-      <div class="col-md-3 mb-3">
-        <label for="validationServer04">State</label>
-        <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="State" required>
-        <div class="invalid-feedback">
-          Please provide a valid state.
-        </div>
-      </div>
-      <div class="col-md-3 mb-3">
-        <label for="validationServer05">Zip</label>
-        <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="Zip" required>
-        <div class="invalid-feedback">
-          Please provide a valid zip.
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
-        <label class="form-check-label" for="invalidCheck3">
-          Agree to terms and conditions
-        </label>
-        <div class="invalid-feedback">
-          You must agree before submitting.
-        </div>
-      </div>
-    </div>
-    <button class="btn btn-primary" type="submit">Submit form</button>
+    <fieldset class="form-group">
+      <label>Target Date</label>
+      <input type="date" #targetdate="ngModel"
+      [ngModel]="todo.targetDate | date:'yyyy-MM-dd'"
+      (ngModelChange)="todo.targetDate =$event"
+      class="form-control" name="targetDate" required="required">
+    </fieldset>
+
+    <button type="submit" class="btn btn-success">Save</button>
   </form>
+</div> -->
+<!-- app.component.html -->
+
+<!-- https://www.codingame.com/playgrounds/8012/angular-form-validation-example-tutorial -->
+<div class="container">
+  <div class="col-12 col-md-10 col-lg-8 justify-content-center">
+  <br>
+  <h1>
+    <!-- Welcome to {{title}}!! -->
+    <p class="row justify-content-center">Sign Up</p>
+  </h1>
+  <form [formGroup]="angForm" novalidate>
+    <div class="form-group">
+      <label>User Name:</label>
+      <input class="form-control" formControlName="username" type="text">
+    </div>
+    <div
+      *ngIf="angForm.controls['username'].invalid && (angForm.controls['username'].dirty || angForm.controls['username'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="angForm.controls['username'].errors.required">
+        User Name Required.
+      </div>
+    </div>
+    <!--password-->
+    <div class="form-group">
+      <label>Password:</label>
+      <input class="form-control" formControlName="password" type="password">
+    </div>
+    <div
+      *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="angForm.controls['password'].errors.required">
+        Password Required.
+      </div>
+    </div>
+
+    <!--Re-enter password-->
+    <div class="form-group">
+      <label>Re-enter Password:</label>
+      <input class="form-control" formControlName="repassword" type="password">
+    </div>
+    <div
+      *ngIf="angForm.controls['repassword'].invalid && (angForm.controls['repassword'].dirty || angForm.controls['repassword'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="angForm.controls['repassword'].errors.required">
+        Re-enter Password Required.
+      </div>
+    </div>
+
+    <!--Email-->
+    <div class="form-group">
+      <label>Email:</label>
+      <input class="form-control" formControlName="email" type="email">
+    </div>
+    <div
+      *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="angForm.controls['email'].errors.required">
+        Email Required.
+      </div>
+    </div>
+    <!--Mobile-->
+    <div class="form-group">
+      <label>Enter Mobile:</label>
+      <input class="form-control" formControlName="mobile" type="number">
+    </div>
+    <div
+      *ngIf="angForm.controls['mobile'].invalid && (angForm.controls['mobile'].dirty || angForm.controls['mobile'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="angForm.controls['mobile'].errors.required">
+        Mobile No. Required.
+      </div>
+    </div>
+
+    <!-- <div class="form-group">
+      <label>Address:</label>
+      <input class="form-control" formControlName="address" type="text">
+    </div>
+    <div
+      *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="angForm.controls['address'].errors.required">
+        email is required.
+      </div>
+    </div> -->
+    <button type="submit" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
+      Save
+    </button>
+  </form>
+  <br />
+  <p>Form value: {{ angForm.value | json }}</p>
+  <p>Form status: {{ angForm.status | json }}</p>
+</div>
+</div>
