@@ -57,7 +57,7 @@ import { TodoComponent } from './todo/todo.component';
     ReactiveFormsModule
   ],
   providers: [
-     //{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService,multi: true}
+     {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService,multi: true}
   ],
   bootstrap: [AppComponent]
 })

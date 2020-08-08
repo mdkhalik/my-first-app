@@ -1,2 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css)
+@import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css);
+
+/* body{
+    background: #2c5364;
+    /* background: #0F3037;
+    background: linear-gradient(to right,#2c5364,#203a43,#0f2027);
+  } */
