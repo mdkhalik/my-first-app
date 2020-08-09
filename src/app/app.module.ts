@@ -25,6 +25,7 @@ import { SampletestComponent } from './sampletest/sampletest.component';
 import { Sampletest2Component } from './sampletest2/sampletest2.component';
 import { HttpInterceptorBasicAuthService } from './service/http/http-interceptor-basic-auth.service';
 import { TodoComponent } from './todo/todo.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { TodoComponent } from './todo/todo.component';
     SearchComponent,
     SampletestComponent,
     Sampletest2Component,
-    TodoComponent
+    TodoComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,7 @@ import { TodoComponent } from './todo/todo.component';
     ReactiveFormsModule
   ],
   providers: [
+      // comment it when using JWT Auth
      {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService,multi: true}
   ],
   bootstrap: [AppComponent]

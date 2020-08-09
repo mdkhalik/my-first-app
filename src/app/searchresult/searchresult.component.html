@@ -4,32 +4,43 @@
         <button (click)="handleSearch()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 </div> -->
-
 <body>
+    <form *ngIf="basicAuthService.isUserLoggedIn()">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="inner row">
+           
+            <div class="col-sm-6 d-flex justify-content-center" style="margin-bottom: 0px;margin-left:200px;margin-top: 0px;">
+                <input class="form-control form-control-md form-control-borderless justify-content-center" type="search"
+                placeholder="Search By Product ID">
+            </div>
+            <div class="col-md-3">
+                <button (click)="handleSearch()" style="margin-top: 0px;margin-bottom: 0px;" class="btn btn-md btn-success"
+                    type="submit">Search</button>
+            </div>
+        
+        </div>
+        <!-- <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
                 <form *ngIf="basicAuthService.isUserLoggedIn()">
                     <div class="row no-gutters align-items-center">
                         <div class="col-auto">
                             <i class="fas fa-search h4 text-body"></i>
                         </div>
-                        <!--end of col-->
+                        
                         <div class="col">
                             <input class="form-control form-control-lg form-control-borderless" type="search"
                                 placeholder="Search By Product ID">
                         </div>
-                        <!--end of col-->
+                        
                         <div class="col-auto">
                             <button (click)="handleSearch()" class="btn btn-lg btn-success"
                                 type="submit">Search</button>
                         </div>
-                        <!--end of col-->
+                        
                     </div>
                 </form>
             </div>
-            <!--end of col-->
-        </div>
+        </div> -->
     </div>
+</form>
 </body>
-<br>

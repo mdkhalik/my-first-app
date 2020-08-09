@@ -71,4 +71,17 @@ export class BasicAuthenticationService {
         )
       );
   }
+
+  saveNewUserIntoDB(username: string,password: string,email: string,mobile: number){
+    return this.http.post<any>(`http://localhost:8088/createNewUser`, { username, password, email, mobile })
+    .pipe(
+      map(
+        data => {
+          //sessionStorage.setItem('authenticatedUser', username)
+          //sessionStorage.setItem('token', `Bearer ${data.token}`)
+          return data;
+        }
+      )
+    );
+  }
 }
