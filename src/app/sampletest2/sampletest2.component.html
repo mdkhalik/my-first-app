@@ -1,18 +1,45 @@
-<input id="name" name="name" class="form-control"
-      required minlength="4" appForbiddenName="bob"
-      [(ngModel)]="hero.name" #name="ngModel" />
-<button type="submit" name="Submit">Please Submit</button>
-<div *ngIf="name.invalid && (name.dirty || name.touched)"
-    class="alert alert-danger">
+<!-- <html>
+  <head>
+    <title>My Title</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target="">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Franco</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/boostrap.min.js"></script>
+  </body>
+</html> -->
 
-  <div *ngIf="name.errors.required">
-    Name is required.
+<div class="card-deck">
+  <div class="card animated slideInDown text-center bg-primary text-white p-5">
+    <!-- <h1 class="">Animate.css</h1> -->
+    <img class="card-img" src="assets\Images\welcome\cards\fruits-nuts.png" alt="Card image cap">
   </div>
-  <div *ngIf="name.errors.minlength">
-    Name must be at least 4 characters long.
-  </div>
-  <div *ngIf="name.errors.forbiddenName">
-    Name cannot be Bob.
-  </div>
-
 </div>
+
+<!-- <div class="card-deck" style="margin-left: 80px;margin-right: 80px;">
+  <div class="card">
+    <img class="card-img" src="assets\Images\welcome\cards\fruits-nuts.png" alt="Card image cap">
+</div> -->
