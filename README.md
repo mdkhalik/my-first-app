@@ -8,6 +8,28 @@ reproduce steps: download zip file of angular project from github and import in 
 Solution: in angular project dir type below command
 npm install --save-dev @angular-devkit/build-angular
 
+Issue : An unhandled exception occurred: Cannot find module '@webassemblyjs/floating-poi nt-hex-parser'
+
+Reproduce: due to some package in node_module folder of angulart, above issue occur. eg: I did npm audit fix anf then this error occur
+
+Solution:
+npm install --save @angular/material @angular/cdk
+rm -rf node_modules
+npm install
+
+Help: https://github.com/webpack/webpack/issues/8746
+
+
+Issue: Cannot find module '@angular/core' or its corresponding type declarations.ts(2307)
+Reproduce: due to some package in node_module folder of angulart, above issue occur. eg: I did npm audit fix anf then this error occur
+
+Solution:
+npm install --save @angular/material @angular/cdk
+rm -rf node_modules
+npm install
+
+Help: https://stackoverflow.com/questions/49359043/error-ts2307-cannot-find-module-angular-core
+
 # MyFirstApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
