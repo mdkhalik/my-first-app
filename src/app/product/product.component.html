@@ -1,5 +1,11 @@
+<html>
+    <head>
+    </head>
 <body>
-    <table class="table table-bordered">
+    <div class="container">
+        <input class="form-control mb-4" id="tableSearch" type="text"
+          placeholder="Type something to search list items">
+    <table class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>Product ID</th>
@@ -13,7 +19,7 @@
             <!-- <th>joiningDate</th> -->
         </tr>
     </thead>
-    <tbody>
+    <tbody id="myTable">
         <tr *ngFor="let product of products">
             <td>{{product.productid}}</td>
             <td>{{product.productname}}</td>
@@ -27,4 +33,6 @@
         </tr>
     </tbody>
 </table>
+</div>
 </body>
+</html>

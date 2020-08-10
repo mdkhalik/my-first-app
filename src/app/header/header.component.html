@@ -43,6 +43,10 @@
             </form> -->
             <li class="nav-item">
                 <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="nav-link text-white"
+                    routerLink="/welcome/Manzer">Try Different Layout</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="nav-link text-white"
                     routerLink="/aboutus">My Account</a>
             </li>
             <li class="nav-item">

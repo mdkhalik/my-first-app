@@ -1,16 +1,26 @@
 body{
-    background: #2c5364;
+     background: #2c5364; 
     /* background: #0F3037;
     background: linear-gradient(to right,#2c5364,#203a43,#0f2027); */
 }
 
+.card >ngb >ng >img{
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    margin: auto;
+    display: block;
+}
+
 .card{
-    background: #2c5364;
+    /* background: #2c5364;  */
+    border: none;
     /* background: #0F3037;
     background: linear-gradient(to right,#2c5364,#203a43,#0f2027); */
 }
 .card-deck{
-    background: #2c5364;
+    background: #2c5364; 
+    border: none;
     /* background: #0F3037;
     background: linear-gradient(to right,#2c5364,#203a43,#0f2027); */
 }
@@ -26,4 +36,21 @@ body{
     100%{
         transform: translateY(0);
     }
+}
+
+
+.btn-change{
+    /* height: 50px;
+    width: 100px; */
+    /* background: lightseagreen; */
+    /* margin: 20px;
+    float: left; */
+    box-shadow: 0 0 1px #ccc;
+    /* webkit-transition: all 0.5s ease-in-out; */
+    border: 0px;
+    color: #fff;
+}
+.btn-change:hover{
+    /* -webkit-transform: scale(1.1); */
+    background: #31708f;
 }
