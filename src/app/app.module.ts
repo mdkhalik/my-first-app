@@ -26,6 +26,19 @@ import { Sampletest2Component } from './sampletest2/sampletest2.component';
 import { HttpInterceptorBasicAuthService } from './service/http/http-interceptor-basic-auth.service';
 import { TodoComponent } from './todo/todo.component';
 import { HeaderComponent } from './header/header.component';
+import { SearchOutputComponent } from './search-output/search-output.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import { DairyProductComponent } from './dairy-product/dairy-product.component';
+import { BakeryProductComponent } from './bakery-product/bakery-product.component';
+import { CerealProductComponent } from './cereal-product/cereal-product.component';
+import { ImmunityProductComponent } from './immunity-product/immunity-product.component';
+import { KitchenProductComponent } from './kitchen-product/kitchen-product.component';
+import { SoapProductComponent } from './soap-product/soap-product.component';
+import { DetergentProductComponent } from './detergent-product/detergent-product.component';
+import { ToothPasteProductComponent } from './tooth-paste-product/tooth-paste-product.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ServicesComponent } from './services/services.component';
+import { OnlineServicesComponent } from './online-services/online-services.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +60,20 @@ import { HeaderComponent } from './header/header.component';
     SampletestComponent,
     Sampletest2Component,
     TodoComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchOutputComponent,
+    SearchbarComponent,
+    DairyProductComponent,
+    BakeryProductComponent,
+    CerealProductComponent,
+    ImmunityProductComponent,
+    KitchenProductComponent,
+    SoapProductComponent,
+    DetergentProductComponent,
+    ToothPasteProductComponent,
+    ProfileComponent,
+    ServicesComponent,
+    OnlineServicesComponent
   ],
   imports: [
     BrowserModule,

@@ -38,7 +38,7 @@
             <div class="form-group row">
               <label for="username" class="col-sm-3 text-white col-form-label">User Name:</label>
               <div class="col-sm-5">
-                <input class="form-control" formControlName="username" type="text">
+                <input class="form-control" formControlName="username" type="text" value="{{username}}" [(ngModel)]="username">
               </div>
               <div
                 *ngIf="angForm.controls['username'].invalid && (angForm.controls['username'].dirty || angForm.controls['username'].touched)"
@@ -52,7 +52,7 @@
             <div class="form-group row">
               <label for="password" class="col-sm-3 text-white col-form-label">Password:</label>
               <div class="col-sm-5">
-                <input class="form-control" formControlName="password" type="password">
+                <input class="form-control" formControlName="password" type="password" value="{{password}}" [(ngModel)]="password">
               </div>
 
               <div
@@ -64,10 +64,10 @@
               </div>
             </div>
             <!--Re-enter password-->
-            <div class="form-group row">
+            <!-- <div class="form-group row">
               <label for="repassword" class="col-sm-3 text-white col-form-label">Re-enter Password:</label>
               <div class="col-sm-5">
-                <input class="form-control" formControlName="repassword" type="password">
+                <input class="form-control" formControlName="repassword" type="password" >
               </div>
 
               <div
@@ -77,12 +77,12 @@
                   Password Required.
                 </div>
               </div>
-            </div>
+            </div> -->
             <!--Email-->
             <div class="form-group row">
               <label for="email" class="col-sm-3 text-white col-form-label">Email:</label>
               <div class="col-sm-5">
-                <input class="form-control" formControlName="email" type="email">
+                <input class="form-control" formControlName="email" type="email" value="{{email}}" [(ngModel)]="email">
               </div>
 
               <div
@@ -97,7 +97,7 @@
             <div class="form-group row">
               <label for="mobile" class="col-sm-3 text-white col-form-label">Enter Mobile:</label>
               <div class="col-sm-5">
-                <input class="form-control" formControlName="mobile" type="number">
+                <input class="form-control" formControlName="mobile" type="number" value="{{mobile}}" [(ngModel)]="mobile">
               </div>
 
               <div

@@ -25,6 +25,7 @@ export class SearchresultComponent implements OnInit {
   isLoggedIn: boolean = false;
   username1 = '';
   product = Product;
+  searchItem = ''
   constructor(//public hardCodedAuthenticationService: HardCodedAuthenticationServiceService,
     public basicAuthService: BasicAuthenticationService,
     public searchDataServiceService: SearchDataServiceService,
@@ -36,14 +37,15 @@ export class SearchresultComponent implements OnInit {
   }
 
   handleSearch(): void {
-    if (this.searchDataServiceService.getProductFromSearchBox('Co0py') != null) {
-      this.searchDataServiceService.getProductFromSearchBox('Co0py').subscribe(
+   // if (this.searchDataServiceService.getProductFromSearchBox(this.searchItem) != null) {
+      this.searchDataServiceService.getProductFromSearchBox(this.searchItem).subscribe(
         (response: any) => {
           console.log('response body' + response.body);
-          this.product = response;
+          //this.product = response;
+          this.router.navigate(['search'])
         }
       );
-      this.router.navigate(['search'])
-    }
+      
+    //}
   }
 }

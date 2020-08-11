@@ -45,7 +45,8 @@ export class SignupComponent implements OnInit {
   }
 
   saveNewUserIntoDB() {
-    console.log('username' + this.angForm.value + ' email=' + this.angForm.value)
+    // console.log('username' + this.angForm.value + ' email=' + this.angForm.value)
+    console.log('username' + this.username+ ' password=' + this.password)
     this.basicAuthService.saveNewUserIntoDB(
       this.username, this.password, this.email, this.mobile).subscribe(
         data => {
