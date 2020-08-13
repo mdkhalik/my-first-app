@@ -73,10 +73,12 @@ export class BasicAuthenticationService {
   }
 
   saveNewUserIntoDB(username: string,password: string,email: string,mobile: number){
+    console.log('usernamepasswordemial='+username+','+password+','+email+','+mobile)
     return this.http.post<any>(`http://localhost:8088/createNewUser`, { username, password, email, mobile })
     .pipe(
       map(
         data => {
+          console.log("responser="+data)
           //sessionStorage.setItem('authenticatedUser', username)
           //sessionStorage.setItem('token', `Bearer ${data.token}`)
           return data;

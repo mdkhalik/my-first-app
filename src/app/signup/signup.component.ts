@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
     this.angForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
-      repassword: ['', Validators.required],
+      // repassword: ['', Validators.required],
       email: ['', Validators.required],
       mobile: ['', Validators.required]
     });
