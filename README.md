@@ -1,3 +1,7 @@
+##################################navbar not showing in mobile display
+https://stackoverflow.com/questions/40445515/navbar-not-visible-in-mobile-display/40445579#:~:text=1%20Answer&text=Your%20entire%20navbar%20is%20wrapped,being%20hidden%20in%20mobile%20widths.&text=navbar%2Dheader%20class%20where%20your,and%20logo%20should%20be%20placed.
+
+
 ##################################How to push angular app to pcf
 https://dzone.com/articles/deploying-angular-6-application-to-cloud-foundry
 
