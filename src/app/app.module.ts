@@ -39,6 +39,8 @@ import { ToothPasteProductComponent } from './tooth-paste-product/tooth-paste-pr
 import { ProfileComponent } from './profile/profile.component';
 import { ServicesComponent } from './services/services.component';
 import { OnlineServicesComponent } from './online-services/online-services.component';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -86,6 +88,7 @@ import { OnlineServicesComponent } from './online-services/online-services.compo
   ],
   providers: [
       // comment it when using JWT Auth
+      {provide: LocationStrategy, useClass: HashLocationStrategy},
      {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService,multi: true}
   ],
   bootstrap: [AppComponent]
