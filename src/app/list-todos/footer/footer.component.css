@@ -75,3 +75,8 @@ body {
 .buttons {
     text-align: center
 }
+
+.btn-floating {
+    font-size: 2em;
+    font-display: unset;
+}

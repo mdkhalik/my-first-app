@@ -10,14 +10,21 @@ export class AuthenticationBean {
 })
 export class BasicAuthenticationService {
 
+  email: string = '';
+  mobile: string = '';
   constructor(public http: HttpClient) { }
 
   //   createBasicAuthenticationHttpHeader(){
   //  }
 
   authenticate(username: string, password: string) {
-    if (username === 'Manzer' && password === 'Nishi') {
+    if (username === 'Manzer' && password === 'Ammi') {
+      let email = 'manzerimam786@gmail.copm';
+      let mobile = '9739854818';
       sessionStorage.setItem('authenticatedUser', username)
+      sessionStorage.setItem('password', password)
+      sessionStorage.setItem('email', email)
+      sessionStorage.setItem('mobile', mobile)
       return true;
     }
     return false;
