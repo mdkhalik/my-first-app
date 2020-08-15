@@ -1,3 +1,12 @@
+##################################reloading webpage with /contact or anything lead 404 error ngnix
+
+In app.module.ts
+
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+After import add following line to providers.
+
+{provide: LocationStrategy, useClass: HashLocationStrategy}
+
 ##################################navbar not showing in mobile display
 https://stackoverflow.com/questions/40445515/navbar-not-visible-in-mobile-display/40445579#:~:text=1%20Answer&text=Your%20entire%20navbar%20is%20wrapped,being%20hidden%20in%20mobile%20widths.&text=navbar%2Dheader%20class%20where%20your,and%20logo%20should%20be%20placed.
 
