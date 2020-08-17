@@ -1,3 +1,29 @@
+#################################$dropdwon issue resolved
+Steps:
+
+1 . install jquery and popper.js
+
+    see jquery and popper.js folder is present in your node_modules , if not then install them
+    npm install jquery --save
+    npm install popper.js --save
+    
+2. package.json, search styles and then scripts and add the jqery and popper.js  
+
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+            
+            
+ 3. run it
+
+Help Reference : https://stackoverflow.com/questions/49055721/navbar-drop-down-menu-not-working-with-angular-and-bootstrap-4
+
 ##################################reloading webpage with /contact or anything lead 404 error ngnix
 
 In app.module.ts
