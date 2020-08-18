@@ -93,4 +93,16 @@ export class BasicAuthenticationService {
       )
     );
   }
+  submitFeedback(name: any,email: any,feedback: any){
+    console.log('name in basicAuth='+name+' ,email='+email+' feedback='+feedback)
+    return this.http.post<any>(`http://localhost:8088/feedback`,{name,email,feedback})
+    .pipe(
+      map(
+        data => {
+          console.log('response='+data)
+          return data;
+        }
+      )
+    )
+  }
 }

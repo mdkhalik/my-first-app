@@ -27,20 +27,16 @@
       <div class="row justify-content-md-center">
         <div class="col-sm-5 animated slideInLeft mt-3">
           <div class="form-group">
-            <input class="form-control  ml-5" formControlName="name" type="email" placeholder="Your Name">
-          </div>
-          <!-- <div>
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-            </div> -->
-
-          <div class="form-group">
-            <input type="email" class="form-control ml-5" id="exampleFormControlInput1" placeholder="Email">
+            <input class="form-control  ml-5" name="name" type="text" [(ngModel)]="name" placeholder="Your Name">
           </div>
           <div class="form-group">
-            <textarea class="form-control ml-5" id="exampleFormControlTextarea1" rows="6"
+            <input type="email" [(ngModel)]="email" name="email" class="form-control ml-5" id="exampleFormControlInput1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control ml-5" name="textArea1" [(ngModel)]="textArea1" id="exampleFormControlTextarea1" rows="6"
               placeholder="Message"></textarea>
           </div>
-          <button type="button" class="btn btn-success pull-right mr-2">Submit Query</button>
+          <button type="button" (click)="submitFeedback()" class="btn btn-success pull-right mr-2">Submit Query</button>
         </div>
         <div class="col-sm-1">
         </div>
