@@ -87,9 +87,9 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
     ReactiveFormsModule
   ],
   providers: [
-      // comment it when using JWT Auth
       {provide: LocationStrategy, useClass: HashLocationStrategy},
-     {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService,multi: true}
+     // comment it when using JWT Auth
+      //{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService,multi: true}
   ],
   bootstrap: [AppComponent]
 })
