@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
   handleJWTAuthLogin(): void {
     this.basicAuthService.retrieveJWTAuthService(this.username, this.password).subscribe(
       data => {
-        console.log('data' + data)
+        console.log('token' + sessionStorage.getItem('token'))
         //if (data['name'] != null) {
         console.log(`data before navigation${data}`)
         this.router.navigate(['../home', this.username])

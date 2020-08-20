@@ -57,6 +57,7 @@ export class ProductComponent implements OnInit {
     );
     this.todoDataService.retrieveAllProducts().subscribe(
       (response: any) => {
+        console.log('token value while retrieving product='+sessionStorage.getItem('token'));
         console.log('response body' + response.body);
         this.products = response;
       }

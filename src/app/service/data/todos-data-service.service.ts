@@ -30,7 +30,7 @@ export class TodosDataServiceService {
     // let headers = new HttpHeaders({
     //   Authorization: basicAuthHeaderString
     // })
-    console.log('making rest get call');
+    console.log('token value in product='+sessionStorage.getItem('token'));
     //return this.http.get<Product[]>('http://localhost:8088/products/products',{headers});
     return this.http.get<Product[]>('http://localhost:8088/products/products');
   }
