@@ -79,9 +79,9 @@ export class BasicAuthenticationService {
       );
   }
 
-  saveNewUserIntoDB(username: string,password: string,email: string,mobile: number){
-    console.log('usernamepasswordemial='+username+','+password+','+email+','+mobile)
-    return this.http.post<any>(`http://localhost:8088/createNewUser`, { username, password, email, mobile })
+  saveNewUserIntoDB(firstName: string,lastName: string, password: string,email: string){
+    console.log('usernamepasswordemial='+firstName+','+password+','+email+','+lastName)
+    return this.http.post<any>(`http://localhost:8088/createNewUser`, { firstName,lastName, password, email })
     .pipe(
       map(
         data => {

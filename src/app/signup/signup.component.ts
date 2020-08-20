@@ -20,10 +20,10 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
 
   title = 'Sign Up for Millat Mart';
-  username: string = ''
+  firstName: string = ''
   password: string = ''
   email: string = ''
-  mobile: number;
+  lastName: string;
   angForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
     private basicAuthService: BasicAuthenticationService,
@@ -36,19 +36,19 @@ export class SignupComponent implements OnInit {
 
   createForm() {
     this.angForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      firstName: ['', Validators.required],
       password: ['', Validators.required],
       // repassword: ['', Validators.required],
       email: ['', Validators.required],
-      mobile: ['', Validators.required]
+      lastName: ['', Validators.required]
     });
   }
 
   saveNewUserIntoDB() {
     // console.log('username' + this.angForm.value + ' email=' + this.angForm.value)
-    console.log('username' + this.username+ ' password=' + this.password)
+    console.log('firstname' + this.firstName+ 'lastname' + this.lastName+ ' password=' + this.password+' email='+this.email)
     this.basicAuthService.saveNewUserIntoDB(
-      this.username, this.password, this.email, this.mobile).subscribe(
+      this.firstName,this.lastName, this.password, this.email).subscribe(
         data => {
           console.log('data' + data)
           this.router.navigate(['../login'])

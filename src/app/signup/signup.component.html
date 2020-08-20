@@ -35,16 +35,31 @@
       <div class="card text-black justify-content-center">
         <div class="card-body justify-content-center">
           <form [formGroup]="angForm" novalidate>
+            <!--FirstName-->
             <div class="form-group row">
-              <label for="username" class="col-sm-3 text-white col-form-label">User Name:</label>
+              <label for="firstName" class="col-sm-3 text-white col-form-label">First Name:</label>
               <div class="col-sm-5">
-                <input class="form-control" formControlName="username" type="text" value="{{username}}" [(ngModel)]="username">
+                <input class="form-control" formControlName="firstName" type="text" value="{{firstName}}" [(ngModel)]="firstName">
               </div>
               <div
-                *ngIf="angForm.controls['username'].invalid && (angForm.controls['username'].dirty || angForm.controls['username'].touched)"
+                *ngIf="angForm.controls['firstName'].invalid && (angForm.controls['firstName'].dirty || angForm.controls['firstName'].touched)"
                 class="alert alert-danger">
-                <div *ngIf="angForm.controls['username'].errors.required">
-                  User Name Required.
+                <div *ngIf="angForm.controls['firstName'].errors.required">
+                  First Name Required.
+                </div>
+              </div>
+            </div>
+            <!--LastName-->
+            <div class="form-group row">
+              <label for="lastName" class="col-sm-3 text-white col-form-label">Last Name:</label>
+              <div class="col-sm-5">
+                <input class="form-control" formControlName="lastName" type="text" value="{{lastName}}" [(ngModel)]="lastName">
+              </div>
+              <div
+                *ngIf="angForm.controls['lastName'].invalid && (angForm.controls['lastName'].dirty || angForm.controls['lastName'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="angForm.controls['lastName'].errors.required">
+                  Last Name Required.
                 </div>
               </div>
             </div>
@@ -94,7 +109,7 @@
               </div>
             </div>
             <!--Mobile-->
-            <div class="form-group row">
+            <!-- <div class="form-group row">
               <label for="mobile" class="col-sm-3 text-white col-form-label">Enter Mobile:</label>
               <div class="col-sm-5">
                 <input class="form-control" formControlName="mobile" type="number" value="{{mobile}}" [(ngModel)]="mobile">
@@ -107,7 +122,7 @@
                   Mobile No. Required.
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div style="align-items: center;"><button (click)="saveNewUserIntoDB()" type="submit" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
               Submit
