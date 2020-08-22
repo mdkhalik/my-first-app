@@ -15,12 +15,14 @@ export class HttpInterceptorBasicAuthService implements HttpInterceptor{
   //  let password = 'Nishi'
   //  let basicAuthHttpString = 'Basic '+window.btoa(username+":"+password)
   let basicAuthHttpString = sessionStorage.getItem('token');
+  if(basicAuthHttpString!= null){
+  console.log('token in interceptor='+sessionStorage.getItem('token'))
    request = request.clone({
      setHeaders:{
        Authorization : basicAuthHttpString
      }
    })
-
+  }
    return next.handle(request);
   }
 }

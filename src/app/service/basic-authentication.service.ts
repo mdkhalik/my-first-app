@@ -64,6 +64,7 @@ export class BasicAuthenticationService {
 
   logout() {
     sessionStorage.removeItem('authenticatedUser');
+    sessionStorage.removeItem('token');
   }
 
   retrieveJWTAuthService(username: any, password: any) {
