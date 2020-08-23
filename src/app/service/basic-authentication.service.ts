@@ -17,21 +17,16 @@ export class BasicAuthenticationService {
   //   createBasicAuthenticationHttpHeader(){
   //  }
 
-  authenticate(username: string, password: string) {
-    if (username === 'Manzer' && password === 'Ammi') {
-      let email = 'manzerimam786@gmail.copm';
-      let mobile = '9739854818';
-      sessionStorage.setItem('authenticatedUser', username)
-      sessionStorage.setItem('password', password)
-      sessionStorage.setItem('email', email)
-      sessionStorage.setItem('mobile', mobile)
+  authenticate(email: string, password: string) {
+    if (email === 'Manzer' && password === 'Ammi') {
+      sessionStorage.setItem('authenticatedUser', email)
       return true;
     }
     return false;
   }
   
-  retrieveBasicAuthService(username: any, password: any) {
-    let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
+  retrieveBasicAuthService(email: any, password: any) {
+    let basicAuthHeaderString = 'Basic ' + window.btoa(email + ':' + password);
     let headers = new HttpHeaders({
       Authorization: basicAuthHeaderString
     })
@@ -40,7 +35,7 @@ export class BasicAuthenticationService {
       .pipe(
         map(
           data => {
-            sessionStorage.setItem('authenticatedUser', username)
+            sessionStorage.setItem('authenticatedUser', email)
             sessionStorage.setItem('token', basicAuthHeaderString)
             return data;
           }
@@ -67,12 +62,12 @@ export class BasicAuthenticationService {
     sessionStorage.removeItem('token');
   }
 
-  retrieveJWTAuthService(username: any, password: any) {
-    return this.http.post<any>(`http://localhost:8088/authenticate`, { username, password })
+  retrieveJWTAuthService(email: any, password: any) {
+    return this.http.post<any>(`http://localhost:8088/authenticate`, { email, password })
       .pipe(
         map(
           data => {
-            sessionStorage.setItem('authenticatedUser', username)
+            sessionStorage.setItem('authenticatedUser', email)
             sessionStorage.setItem('token', `Bearer ${data.token}`)
             return data;
           }

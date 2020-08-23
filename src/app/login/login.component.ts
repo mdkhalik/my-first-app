@@ -11,7 +11,7 @@ import { BasicAuthenticationService } from '../service/basic-authentication.serv
 
 export class LoginComponent implements OnInit {
 
-  username = '';
+  email = '';
   password = '';
   errorMessage = 'Invalid Credentials';
   inValidLogin = false;
@@ -22,22 +22,22 @@ export class LoginComponent implements OnInit {
   }
 
    handleLogin(): void {
-     if (this.basicAuthService.authenticate(this.username, this.password)) {
-       this.router.navigate(['home', this.username])
+     if (this.basicAuthService.authenticate(this.email, this.password)) {
+       this.router.navigate(['home', this.email])
        this.inValidLogin = false;
      } else {
        this.inValidLogin = true;
      }
    }
   handleBasicAuthLogin(): void {
-    console.log('inside handlebasic auth()=' + this.username);
+    console.log('inside handlebasic auth()=' + this.email);
     console.log('inside handlle basic auth() password=' + this.password);
-    this.basicAuthService.retrieveBasicAuthService(this.username, this.password).subscribe(
+    this.basicAuthService.retrieveBasicAuthService(this.email, this.password).subscribe(
       data => {
         console.log('data' + data)
         if (data['name'] != null) {
           console.log(`data before navigation${data}`)
-          this.router.navigate(['../home', this.username])
+          this.router.navigate(['../home', this.email])
           //working fine if authguard not availablethis.router.navigate(['../sample2'])
           //this.router.navigateByUrl(['/welcome', this.username])
           //this.router.navigate(["../product"])
@@ -54,12 +54,12 @@ export class LoginComponent implements OnInit {
   }
   //retrieveJWTAuthService
   handleJWTAuthLogin(): void {
-    this.basicAuthService.retrieveJWTAuthService(this.username, this.password).subscribe(
+    this.basicAuthService.retrieveJWTAuthService(this.email, this.password).subscribe(
       data => {
         console.log('token' + sessionStorage.getItem('token'))
         //if (data['name'] != null) {
         console.log(`data before navigation${data}`)
-        this.router.navigate(['../home', this.username])
+        this.router.navigate(['../home', this.email])
         //working fine if authguard not availablethis.router.navigate(['../sample2'])
         //this.router.navigateByUrl(['/welcome', this.username])
         //this.router.navigate(["../product"])
