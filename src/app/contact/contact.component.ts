@@ -19,6 +19,8 @@ export class ContactComponent implements OnInit {
   name: string= ''
   email: string = ''
   textArea1: string = ''
+  validResponse = false;
+  successMessage = 'Email Sent Successfully'
   constructor(public basicAuthService:BasicAuthenticationService) { }
 
   ngOnInit(): void {
@@ -28,7 +30,8 @@ export class ContactComponent implements OnInit {
     console.log('name='+this.name+' ,email='+this.email+' feedback='+this.textArea1)
      this.basicAuthService.submitFeedback(this.name,this.email,this.textArea1).subscribe(
       response => {
-        console.log('email sent successfully');
+        this.validResponse = true;
+        console.log('email sent successfully and'+response);
       }
     );
   }

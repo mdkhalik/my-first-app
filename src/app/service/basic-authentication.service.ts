@@ -11,22 +11,21 @@ export class AuthenticationBean {
 export class BasicAuthenticationService {
 
   email: string = '';
-  mobile: string = '';
   constructor(public http: HttpClient) { }
 
   //   createBasicAuthenticationHttpHeader(){
   //  }
 
-  authenticate(email: string, password: string) {
-    if (email === 'Manzer' && password === 'Ammi') {
-      sessionStorage.setItem('authenticatedUser', email)
+  authenticate(username: string, password: string) {
+    if (username === 'Manzer' && password === 'Ammi') {
+      sessionStorage.setItem('authenticatedUser', username)
       return true;
     }
     return false;
   }
   
-  retrieveBasicAuthService(email: any, password: any) {
-    let basicAuthHeaderString = 'Basic ' + window.btoa(email + ':' + password);
+  retrieveBasicAuthService(username: any, password: any) {
+    let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
     let headers = new HttpHeaders({
       Authorization: basicAuthHeaderString
     })
@@ -35,7 +34,7 @@ export class BasicAuthenticationService {
       .pipe(
         map(
           data => {
-            sessionStorage.setItem('authenticatedUser', email)
+            sessionStorage.setItem('authenticatedUser', username)
             sessionStorage.setItem('token', basicAuthHeaderString)
             return data;
           }
@@ -62,12 +61,13 @@ export class BasicAuthenticationService {
     sessionStorage.removeItem('token');
   }
 
-  retrieveJWTAuthService(email: any, password: any) {
-    return this.http.post<any>(`http://localhost:8088/authenticate`, { email, password })
+  retrieveJWTAuthService(username: any, password: any) {
+    console.log('username='+username+', password='+password);
+    return this.http.post<any>(`http://localhost:8088/authenticate`, { username, password })
       .pipe(
         map(
           data => {
-            sessionStorage.setItem('authenticatedUser', email)
+            sessionStorage.setItem('authenticatedUser', username)
             sessionStorage.setItem('token', `Bearer ${data.token}`)
             return data;
           }

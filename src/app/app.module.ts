@@ -41,6 +41,7 @@ import { ServicesComponent } from './services/services.component';
 import { OnlineServicesComponent } from './online-services/online-services.component';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { RegistrationComponent } from './registration/registration.component';
+import { RegistrationSuccessfulComponent } from './registration-successful/registration-successful.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { RegistrationComponent } from './registration/registration.component';
     ProfileComponent,
     ServicesComponent,
     OnlineServicesComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    RegistrationSuccessfulComponent
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,7 @@ import { Sampletest2Component } from './sampletest2/sampletest2.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { RegistrationSuccessfulComponent } from './registration-successful/registration-successful.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
     { path: 'profile', component: ProfileComponent },
     // { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService] },
     { path: 'logout', component: LogoutComponent },
+    { path: 'successfulRegistration', component: RegistrationSuccessfulComponent },
     { path: 'product', component: ProductComponent, canActivate: [RouteGuardService] },
     { path: 'contact', component: ContactComponent, canActivate: [RouteGuardService] },
     { path: 'aboutus', component: AboutComponent, canActivate: [RouteGuardService] },

@@ -43,7 +43,7 @@ export class RegistrationComponent implements OnInit {
       this.firstName,this.lastName, this.password, this.email).subscribe(
         data => {
           console.log('data' + data)
-          this.router.navigate(['../login'])
+          this.router.navigate(['../successfulRegistration'])
         },
         error => {
           console.log("error data before navigation" + error)
