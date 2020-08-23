@@ -10,7 +10,7 @@ import { ProductComponent } from './product/product.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 //import { SignupComponent } from './signup/signup.component';
-import { SearchresultComponent } from './searchresult/searchresult.component';
+//import { SearchresultComponent } from './searchresult/searchresult.component';
 import { SearchComponent } from './search/search.component';
 import { SampletestComponent } from './sampletest/sampletest.component';
 import { Sampletest2Component } from './sampletest2/sampletest2.component';
@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RegistrationSuccessfulComponent } from './registration-successful/registration-successful.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -35,7 +36,8 @@ const routes: Routes = [
     { path: 'product', component: ProductComponent, canActivate: [RouteGuardService] },
     { path: 'contact', component: ContactComponent, canActivate: [RouteGuardService] },
     { path: 'aboutus', component: AboutComponent, canActivate: [RouteGuardService] },
-    { path: 'search', component: SearchComponent, canActivate: [RouteGuardService] },
+    { path: 'searchBar', component: SearchbarComponent, canActivate: [RouteGuardService] },
+    { path: 'searchComponent', component: SearchComponent, canActivate: [RouteGuardService] },
     { path: '**', component: ErrorComponent }
 ];
 

@@ -11,6 +11,7 @@ export class SearchDataServiceService {
   constructor(public http: HttpClient) { }
 
   getProductFromSearchBox(productName: string){
+    console.log('productname='+productName);
     return this.http.get<any>(`http://localhost:8088/products/${productName}`);
   }
 }

@@ -18,7 +18,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductComponent } from './product/product.component';
 //import { SignupComponent } from './signup/signup.component';
-import { SearchresultComponent } from './searchresult/searchresult.component';
+//import { SearchresultComponent } from './searchresult/searchresult.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { SampletestComponent } from './sampletest/sampletest.component';
@@ -58,7 +58,7 @@ import { RegistrationSuccessfulComponent } from './registration-successful/regis
     ContactComponent,
     ProductComponent,
   //  SignupComponent,
-    SearchresultComponent,
+  //  SearchresultComponent,
     HomeComponent,
     SearchComponent,
     SampletestComponent,
