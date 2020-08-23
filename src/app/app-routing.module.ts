@@ -9,17 +9,19 @@ import { RouteGuardService } from './service/route-guard.service';
 import { ProductComponent } from './product/product.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { SignupComponent } from './signup/signup.component';
+//import { SignupComponent } from './signup/signup.component';
 import { SearchresultComponent } from './searchresult/searchresult.component';
 import { SearchComponent } from './search/search.component';
 import { SampletestComponent } from './sampletest/sampletest.component';
 import { Sampletest2Component } from './sampletest2/sampletest2.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: 'signup', component: SignupComponent },
+  //  { path: 'signup', component: SignupComponent },
+  { path: 'registration', component: RegistrationComponent },
     { path: 'sample', component: SampletestComponent, canActivate: [RouteGuardService] },
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'sample2', component: Sampletest2Component },

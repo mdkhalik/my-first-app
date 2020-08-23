@@ -17,7 +17,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductComponent } from './product/product.component';
-import { SignupComponent } from './signup/signup.component';
+//import { SignupComponent } from './signup/signup.component';
 import { SearchresultComponent } from './searchresult/searchresult.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
@@ -40,6 +40,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ServicesComponent } from './services/services.component';
 import { OnlineServicesComponent } from './online-services/online-services.component';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -55,7 +56,7 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
     AboutComponent,
     ContactComponent,
     ProductComponent,
-    SignupComponent,
+  //  SignupComponent,
     SearchresultComponent,
     HomeComponent,
     SearchComponent,
@@ -75,7 +76,8 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
     ToothPasteProductComponent,
     ProfileComponent,
     ServicesComponent,
-    OnlineServicesComponent
+    OnlineServicesComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
