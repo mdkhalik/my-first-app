@@ -26,11 +26,13 @@ export class SearchbarComponent implements OnInit {
   username1 = '';
   product = Product;
   searchItem = ''
+  data: any;
   constructor(
     public basicAuthService: BasicAuthenticationService,
     public searchDataServiceService: SearchDataServiceService,
     public router: Router
-  ) { }
+  ) { 
+  }
 
   ngOnInit(): void {
     this.isLoggedIn = this.basicAuthService.isUserLoggedIn();
@@ -40,10 +42,11 @@ export class SearchbarComponent implements OnInit {
   handleSearch(): void {
     // if (this.searchDataServiceService.getProductFromSearchBox(this.searchItem) != null) {
        this.searchDataServiceService.getProductFromSearchBox(this.searchItem).subscribe(
-         (response: any) => {
-           console.log('response body' + response);
-           //this.product = response;
+         (data: any) => {
+           this.product = data;
+           console.log('response body' + this.product);
            this.router.navigate(['searchComponent'])
+           this.searchDataServiceService.setData(data)
          }
        );
        
