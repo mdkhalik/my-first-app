@@ -70,7 +70,7 @@ export class ProductComponent implements OnInit {
     //  );
   }
   deleteProduct(productid: number) {
-    this.todoDataService.deleteProducts(104).subscribe(
+    this.todoDataService.deleteProducts(productid).subscribe(
       response => {
         console.log('deleted');
       }
