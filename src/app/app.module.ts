@@ -42,6 +42,8 @@ import { OnlineServicesComponent } from './online-services/online-services.compo
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { RegistrationComponent } from './registration/registration.component';
 import { RegistrationSuccessfulComponent } from './registration-successful/registration-successful.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 @NgModule({
@@ -79,7 +81,9 @@ import { RegistrationSuccessfulComponent } from './registration-successful/regis
     ServicesComponent,
     OnlineServicesComponent,
     RegistrationComponent,
-    RegistrationSuccessfulComponent
+    RegistrationSuccessfulComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

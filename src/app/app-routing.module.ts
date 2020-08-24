@@ -19,6 +19,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { RegistrationSuccessfulComponent } from './registration-successful/registration-successful.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
     { path: 'welcome/:name', component: WelcomeComponent },
     { path: 'home/:name', component: HomeComponent },
     { path: 'profile', component: ProfileComponent },
+    { path: 'forgetPassword', component: ForgotPasswordComponent },
     // { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService] },
     { path: 'logout', component: LogoutComponent },
     { path: 'successfulRegistration', component: RegistrationSuccessfulComponent },
@@ -37,7 +39,7 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent, canActivate: [RouteGuardService] },
     { path: 'aboutus', component: AboutComponent, canActivate: [RouteGuardService] },
     { path: 'searchBar', component: SearchbarComponent, canActivate: [RouteGuardService] },
-    { path: 'searchComponent', component: SearchComponent, canActivate: [RouteGuardService] },
+   { path: 'searchComponent', component: SearchComponent, canActivate: [RouteGuardService] },
     { path: '**', component: ErrorComponent }
 ];
 

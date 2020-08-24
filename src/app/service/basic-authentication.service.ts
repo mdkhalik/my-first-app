@@ -41,6 +41,9 @@ export class BasicAuthenticationService {
         )
       );
   }
+  checkEmail(email: string){
+     this.http.get<any>(``);
+  }
 
   isUserLoggedIn() {
     let user = sessionStorage.getItem('authenticatedUser')
