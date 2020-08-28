@@ -42,7 +42,8 @@ export class BasicAuthenticationService {
       );
   }
   checkEmail(email: string){
-     this.http.get<any>(``);
+    console.log('email1='+email);
+     return this.http.get<any>(`http://localhost:8088/reset-password/${email}`);
   }
 
   isUserLoggedIn() {

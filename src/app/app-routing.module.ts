@@ -20,6 +20,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { RegistrationSuccessfulComponent } from './registration-successful/registration-successful.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
     { path: 'logout', component: LogoutComponent },
     { path: 'successfulRegistration', component: RegistrationSuccessfulComponent },
     { path: 'product', component: ProductComponent, canActivate: [RouteGuardService] },
+    { path: 'reset', component: ResetPasswordComponent },
     { path: 'contact', component: ContactComponent, canActivate: [RouteGuardService] },
     { path: 'aboutus', component: AboutComponent, canActivate: [RouteGuardService] },
     { path: 'searchBar', component: SearchbarComponent, canActivate: [RouteGuardService] },
