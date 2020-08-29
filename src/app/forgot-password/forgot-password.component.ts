@@ -32,7 +32,7 @@ export class ForgotPasswordComponent implements OnInit {
     });
   }
 
-  resetPassword(){
+  forgetPassword(){
     this.basicAuthService.checkEmail(this.email).subscribe(
       data => {
         //console.log('fName' + data.data.fName);

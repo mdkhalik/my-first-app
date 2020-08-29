@@ -43,7 +43,7 @@ export class BasicAuthenticationService {
   }
   checkEmail(email: string){
     console.log('email1='+email);
-     return this.http.get<any>(`http://localhost:8088/reset-password/${email}`);
+     return this.http.get<any>(`http://localhost:8088/forget-password/${email}`);
   }
 
   isUserLoggedIn() {
@@ -104,5 +104,19 @@ export class BasicAuthenticationService {
         }
       )
     )
+  }
+  createNewPassword(password: string){
+    console.log('new password='+password);
+    return this.http.post<any>(`http://localhost:8088/createNewPassword/`,{password})
+    .pipe(
+      map(
+        data => {
+          console.log("response="+data)
+          //sessionStorage.setItem('authenticatedUser', username)
+          //sessionStorage.setItem('token', `Bearer ${data.token}`)
+          return data;
+        }
+      )
+    );
   }
 }
