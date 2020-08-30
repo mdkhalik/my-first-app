@@ -42,7 +42,7 @@ export class BasicAuthenticationService {
       );
   }
   checkEmail(email: string){
-    console.log('email1='+email);
+     console.log('email1='+email);
      return this.http.get<any>(`http://localhost:8088/forget-password/${email}`);
   }
 
@@ -105,13 +105,14 @@ export class BasicAuthenticationService {
       )
     )
   }
-  createNewPassword(password: string){
-    console.log('new password='+password);
-    return this.http.post<any>(`http://localhost:8088/createNewPassword/`,{password})
+  resetPassword(passwordToken:string, password: string){
+    console.log('new password='+password+' passowrdtoiken='+passwordToken);
+    return this.http.post<any>(`http://localhost:8088/reset-password`,{password,passwordToken})
     .pipe(
       map(
         data => {
           console.log("response="+data)
+          console.log("response message="+data.message);
           //sessionStorage.setItem('authenticatedUser', username)
           //sessionStorage.setItem('token', `Bearer ${data.token}`)
           return data;

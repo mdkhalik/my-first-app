@@ -15,6 +15,7 @@ export class ForgotPasswordComponent implements OnInit {
   angForm: FormGroup;
   inValidEmail =  false;
   errorEmailMessage : string;
+  //data: any;
 
 
   constructor(private formBuilder: FormBuilder,
@@ -36,7 +37,8 @@ export class ForgotPasswordComponent implements OnInit {
     this.basicAuthService.checkEmail(this.email).subscribe(
       data => {
         //console.log('fName' + data.data.fName);
-        console.log('inside data loop of reset password');
+        console.log('inside data loop of reset password'+data);
+        //this.data = data;
         this.router.navigate(["/reset"]);
         //if (data['name'] != null) {
         //console.log(`data before navigation${data}`)
