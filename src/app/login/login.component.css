@@ -1,12 +1,12 @@
-body{
-    background: #2c5364;
+/* body{
+    background: #2c5364; */
     /* background: #0F3037;
     background: linear-gradient(to right,#2c5364,#203a43,#0f2027); */
-}
+/* } */
 
-.card{
+/* .card{
     background: #2c5364;
-}
+} */
 .container{
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@ body{
 
 .inner{
     text-align: center;
-    color: whitesmoke;
+    /* color: whitesmoke; */
     overflow: hidden;
     padding: 0.4em;
 }

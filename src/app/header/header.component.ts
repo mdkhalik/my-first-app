@@ -47,6 +47,4 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['search'])
     }
   }
-
-
 }

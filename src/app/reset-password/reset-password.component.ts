@@ -36,7 +36,7 @@ export class ResetPasswordComponent implements OnInit {
      this.basicAuthService.resetPassword(this.passwordToken,this.password).subscribe(
        data => {
          //console.log('fName' + data.data.fName);
-         console.log('data part of reset password');
+         console.log('data part of reset password'+data.data.statusMessage);
        },
        error => {
          console.log(error.error.toString());

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { SelectorListContext } from '@angular/compiler';
 
 export class AuthenticationBean {
   constructor(message: string) { }
@@ -119,5 +120,9 @@ export class BasicAuthenticationService {
         }
       )
     );
-  }
+    }
+    getProfile(){
+      console.log('inside getProfile()');
+      return this.http.get<any>(`http://localhost:8088/getProfile/${sessionStorage.getItem('authenticatedUser')}`)
+    }
 }
