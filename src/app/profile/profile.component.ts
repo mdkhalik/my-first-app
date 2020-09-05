@@ -16,10 +16,10 @@ export class User {
 })
 export class ProfileComponent implements OnInit {
 
-  firstName: string = '';
-   lastName: string = '';
-  email: string = '';
-  password: string = '';
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
   user= User;
   constructor(private basicAuthService: BasicAuthenticationService) { }
 

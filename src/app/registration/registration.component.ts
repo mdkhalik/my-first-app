@@ -36,10 +36,10 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  saveNewUserIntoDB() {
+  registration() {
     // console.log('username' + this.angForm.value + ' email=' + this.angForm.value)
     console.log('firstname' + this.firstName+ 'lastname' + this.lastName+ ' password=' + this.password+' email='+this.email)
-    this.basicAuthService.saveNewUserIntoDB(
+    this.basicAuthService.registration(
       this.firstName,this.lastName, this.password, this.email).subscribe(
         data => {
           console.log('data' + data)

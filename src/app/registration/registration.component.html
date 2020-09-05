@@ -124,13 +124,13 @@
                 </div>
               </div> -->
   
-              <div class="text-center mr-5"><button class="pull-text-center" (click)="saveNewUserIntoDB()" type="submit" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
+              <div class="text-center mr-5"><button class="pull-text-center" (click)="registration()" type="submit" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
                 Submit
               </button></div>
             </form>
             <br />
-            <p>Form value: {{ angForm.value | json }}</p>
-            <p>Form status: {{ angForm.status | json }}</p>
+            <!-- <p>Form value: {{ angForm.value | json }}</p>
+            <p>Form status: {{ angForm.status | json }}</p> -->
             <!-- </div> -->
           </div>
         </div>

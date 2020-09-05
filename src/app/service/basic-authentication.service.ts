@@ -80,9 +80,9 @@ export class BasicAuthenticationService {
       );
   }
 
-  saveNewUserIntoDB(firstName: string,lastName: string, password: string,email: string){
+  registration(firstName: string,lastName: string, password: string,email: string){
     console.log('usernamepasswordemial='+firstName+','+password+','+email+','+lastName)
-    return this.http.post<any>(`http://localhost:8088/createNewUser`, { firstName,lastName, password, email })
+    return this.http.post<any>(`http://localhost:8088/register`, { firstName,lastName, password, email })
     .pipe(
       map(
         data => {
