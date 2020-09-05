@@ -49,15 +49,15 @@ export class RegistrationComponent implements OnInit {
     this.basicAuthService.registration(
       this.firstName,this.lastName, this.password, this.email).subscribe(
         data => {
-          console.log('data' + data.data.statusMessage)
+          console.log('data' + data.statusMessage)
           //this.router.navigate(['../successfulRegistration'])
-          this.response = data;
-          console.log('status Message' + this.statusMessage)
+          this.statusMessage = data.statusMessage
+          //console.log('status Message' + this.statusMessage)
         },
         error => {
           console.log('error data before navigation' +  error.error.statusMessage)
           this.statusMessage = error.error.statusMessage;
-          console.log('status Message' + this.statusMessage)
+          //console.log('status Message' + this.statusMessage)
         }
       )
   }

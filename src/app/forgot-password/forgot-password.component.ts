@@ -3,6 +3,11 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BasicAuthenticationService } from '../service/basic-authentication.service';
 
+export class User{
+  constructor(
+
+  ){}
+}
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
@@ -15,6 +20,7 @@ export class ForgotPasswordComponent implements OnInit {
   angForm: FormGroup;
   inValidEmail =  false;
   errorEmailMessage : string;
+  statusMessage: string;
   //data: any;
 
 
@@ -39,6 +45,7 @@ export class ForgotPasswordComponent implements OnInit {
         //console.log('fName' + data.data.fName);
         console.log('inside data loop of reset password'+data);
         //this.data = data;
+        this.statusMessage = data.statusMessage;
         this.router.navigate(["/reset"]);
         //if (data['name'] != null) {
         //console.log(`data before navigation${data}`)
@@ -52,8 +59,9 @@ export class ForgotPasswordComponent implements OnInit {
       },
       error => {
         console.log("error data before navigation" + error)
+        this.statusMessage = error.error.statusMessage;
         //console.log('fName' + data.data.fName);
-        console.log('inside error loop of reset password');
+        //console.log('inside error loop of reset password');
       }
     )
   }

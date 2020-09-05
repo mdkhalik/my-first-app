@@ -17,6 +17,8 @@ export class ResetPasswordComponent implements OnInit {
    passwordToken:string;
    message: string;
    code:number;
+   statusMessage: string;
+   
    constructor(private formBuilder: FormBuilder,
      public basicAuthService:BasicAuthenticationService){ 
     this.createForm();
@@ -36,11 +38,12 @@ export class ResetPasswordComponent implements OnInit {
      this.basicAuthService.resetPassword(this.passwordToken,this.password).subscribe(
        data => {
          //console.log('fName' + data.data.fName);
-         console.log('data part of reset password'+data.data.statusMessage);
+         //console.log('data part of reset password'+data.statusMessage);
+         this.statusMessage = data.statusMessage;
        },
        error => {
          console.log(error.error.toString());
-       
+         this.statusMessage = error.error.statusMessage;
          this.handleError(error);
          //console.log('error message='+this.message+', error code='+this.code);
        }
