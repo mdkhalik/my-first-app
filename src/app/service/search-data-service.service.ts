@@ -4,6 +4,7 @@ import { Product } from '../product/product.component';
 //import { Product } from '../list-todos/list-todos.component';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { API_URL } from '../app.constant';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class SearchDataServiceService {
 
   getProductFromSearchBox(productName: string) {
     console.log('productname=' + productName);
-    return this.http.get(`http://localhost:8088/products/${productName}`)
+    return this.http.get(`${API_URL}/products/${productName}`)
       .pipe(
         map(
           (data) => {

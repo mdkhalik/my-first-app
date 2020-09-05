@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { SelectorListContext } from '@angular/compiler';
+import { API_URL } from '../app.constant';
 
+export const TOKEN = 'token'
+export const AUTHENTICATED_USER ='authenticatedUser'
 export class AuthenticationBean {
   constructor(message: string) { }
 }
@@ -19,7 +22,7 @@ export class BasicAuthenticationService {
 
   authenticate(username: string, password: string) {
     if (username === 'Manzer' && password === 'Ammi') {
-      sessionStorage.setItem('authenticatedUser', username)
+      sessionStorage.setItem(AUTHENTICATED_USER, username)
       return true;
     }
     return false;
@@ -30,13 +33,13 @@ export class BasicAuthenticationService {
     let headers = new HttpHeaders({
       Authorization: basicAuthHeaderString
     })
-    //return this.http.get<Product[]>('http://localhost:8088/products/products',{headers});
-    return this.http.get<AuthenticationBean>(`http://localhost:8088/basicauth`, { headers })
+    //return this.http.get<Product[]>('${API_URL}/products/products',{headers});
+    return this.http.get<AuthenticationBean>(`${API_URL}/basicauth`, { headers })
       .pipe(
         map(
           data => {
-            sessionStorage.setItem('authenticatedUser', username)
-            sessionStorage.setItem('token', basicAuthHeaderString)
+            sessionStorage.setItem(AUTHENTICATED_USER, username)
+            sessionStorage.setItem(TOKEN, basicAuthHeaderString)
             return data;
           }
         )
@@ -44,36 +47,36 @@ export class BasicAuthenticationService {
   }
   checkEmail(email: string){
      console.log('email1='+email);
-     return this.http.get<any>(`http://localhost:8088/forget-password/${email}`);
+     return this.http.get<any>(`${API_URL}/forget-password/${email}`);
   }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('authenticatedUser')
+    let user = sessionStorage.getItem(AUTHENTICATED_USER)
     return !(user === null);
   }
 
   getAuthenticatedUser() {
-    return sessionStorage.getItem('authenticatedUser')
+    return sessionStorage.getItem(AUTHENTICATED_USER)
   }
 
   getAuthenticatedToken() {
     if (this.getAuthenticatedUser())
-      return sessionStorage.getItem('token')
+      return sessionStorage.getItem(TOKEN)
   }
 
   logout() {
-    sessionStorage.removeItem('authenticatedUser');
-    sessionStorage.removeItem('token');
+    sessionStorage.removeItem(AUTHENTICATED_USER);
+    sessionStorage.removeItem(TOKEN);
   }
 
   retrieveJWTAuthService(username: any, password: any) {
     console.log('username='+username+', password='+password);
-    return this.http.post<any>(`http://localhost:8088/authenticate`, { username, password })
+    return this.http.post<any>(`${API_URL}/authenticate`, { username, password })
       .pipe(
         map(
           data => {
-            sessionStorage.setItem('authenticatedUser', username)
-            sessionStorage.setItem('token', `Bearer ${data.token}`)
+            sessionStorage.setItem(AUTHENTICATED_USER, username)
+            sessionStorage.setItem(TOKEN, `Bearer ${data.token}`)
             return data;
           }
         )
@@ -82,12 +85,12 @@ export class BasicAuthenticationService {
 
   registration(firstName: string,lastName: string, password: string,email: string){
     console.log('usernamepasswordemial='+firstName+','+password+','+email+','+lastName)
-    return this.http.post<any>(`http://localhost:8088/register`, { firstName,lastName, password, email })
+    return this.http.post<any>(`${API_URL}/register`, { firstName,lastName, password, email })
     .pipe(
       map(
         data => {
           console.log("responser="+data)
-          //sessionStorage.setItem('authenticatedUser', username)
+          //sessionStorage.setItem(AUTHENTICATED_USER, username)
           //sessionStorage.setItem('token', `Bearer ${data.token}`)
           return data;
         }
@@ -96,7 +99,7 @@ export class BasicAuthenticationService {
   }
   submitFeedback(name: any,email: any,feedback: any){
     console.log('name in basicAuth='+name+' ,email='+email+' feedback='+feedback)
-    return this.http.post<any>(`http://localhost:8088/feedback`,{name,email,feedback})
+    return this.http.post<any>(`${API_URL}/feedback`,{name,email,feedback})
     .pipe(
       map(
         data => {
@@ -108,7 +111,7 @@ export class BasicAuthenticationService {
   }
   resetPassword(passwordToken:string, password: string){
     console.log('new password='+password+' passowrdtoiken='+passwordToken);
-    return this.http.post<any>(`http://localhost:8088/reset-password`,{password,passwordToken})
+    return this.http.post<any>(`${API_URL}/reset-password`,{password,passwordToken})
     .pipe(
       map(
         data => {
@@ -123,6 +126,6 @@ export class BasicAuthenticationService {
     }
     getProfile(){
       console.log('inside getProfile()');
-      return this.http.get<any>(`http://localhost:8088/getProfile/${sessionStorage.getItem('authenticatedUser')}`)
+      return this.http.get<any>(`${API_URL}/getProfile/${sessionStorage.getItem(AUTHENTICATED_USER)}`)
     }
 }
