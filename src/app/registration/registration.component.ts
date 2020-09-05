@@ -3,6 +3,11 @@ import { BasicAuthenticationService } from '../service/basic-authentication.serv
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+export class Response{
+  constructor(
+    public statusMessage: string
+  ){}
+}
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -16,6 +21,8 @@ export class RegistrationComponent implements OnInit {
   email: string = ''
   lastName: string;
   angForm: FormGroup;
+  response= Response;
+  statusMessage: string;
 
   constructor(private formBuilder: FormBuilder,
     private basicAuthService: BasicAuthenticationService,
@@ -42,11 +49,15 @@ export class RegistrationComponent implements OnInit {
     this.basicAuthService.registration(
       this.firstName,this.lastName, this.password, this.email).subscribe(
         data => {
-          console.log('data' + data)
-          this.router.navigate(['../successfulRegistration'])
+          console.log('data' + data.data.statusMessage)
+          //this.router.navigate(['../successfulRegistration'])
+          this.response = data;
+          console.log('status Message' + this.statusMessage)
         },
         error => {
-          console.log("error data before navigation" + error)
+          console.log('error data before navigation' +  error.error.statusMessage)
+          this.statusMessage = error.error.statusMessage;
+          console.log('status Message' + this.statusMessage)
         }
       )
   }
