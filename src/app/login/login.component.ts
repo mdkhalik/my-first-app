@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   password = '';
   errorMessage = 'Invalid Credentials';
   inValidLogin = false;
+  userStatus: string;
   constructor(private router: Router,
     //public hardCodedAuthenticationService: HardCodedAuthenticationServiceService,
     public basicAuthService: BasicAuthenticationService) { }
@@ -69,6 +70,7 @@ export class LoginComponent implements OnInit {
       },
       error => {
         console.log("error data before navigation" + error)
+        this.userStatus =  error.error.statusMessage;
         console.log(error);
         this.inValidLogin = true;
       }
