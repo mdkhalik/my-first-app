@@ -85,7 +85,7 @@ export class BasicAuthenticationService {
 
   registration(firstName: string,lastName: string, password: string,email: string){
     console.log('usernamepasswordemial='+firstName+','+password+','+email+','+lastName)
-    return this.http.post<any>(`${API_URL}/register`, { firstName,lastName, password, email })
+    return this.http.post<any>(`${API_URL}/user/registration`, { firstName,lastName, password, email })
     .pipe(
       map(
         data => {
