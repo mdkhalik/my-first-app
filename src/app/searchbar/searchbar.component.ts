@@ -24,7 +24,7 @@ export class SearchbarComponent implements OnInit {
 
   isLoggedIn: boolean = false;
   username1 = '';
-  product = Product;
+  product : Product;
   searchItem = ''
   data: any;
   constructor(
@@ -44,7 +44,7 @@ export class SearchbarComponent implements OnInit {
        this.searchDataServiceService.getProductFromSearchBox(this.searchItem).subscribe(
          (data: any) => {
            this.product = data;
-           console.log('response body' + this.product);
+           //console.log('response body' + data.product);
            this.router.navigate(['searchComponent'])
            this.searchDataServiceService.setData(data)
          }

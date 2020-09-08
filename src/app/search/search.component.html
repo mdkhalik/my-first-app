@@ -20,14 +20,14 @@
         </tr>
     </thead>
     <tbody id="myTable">
-        <tr>
-            <td>{{data.productid}}</td>
-            <td>{{data.productname}}</td>
-            <td>{{data.price}}</td>
-            <td>{{data.category}}</td>
-            <td>{{data.availability}}</td>
-            <td>{{data.cod}}</td>
-            <td>{{data.insertiondate}}</td>
+        <tr *ngFor="let data1 of data">
+            <td>{{data1.productid}}</td>
+            <td>{{data1.productname}}</td>
+            <td>{{data1.price}}</td>
+            <td>{{data1.category}}</td>
+            <td>{{data1.availability}}</td>
+            <td>{{data1.cod}}</td>
+            <td>{{data1.insertiondate}}</td>
             <!-- <td><button (click)="deleteProduct(data1.productid)">Add to Cart</button></td> -->
             <!-- <td>{{employee1.joiningDate}}</td> -->
         </tr>

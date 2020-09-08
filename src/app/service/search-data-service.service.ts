@@ -17,7 +17,7 @@ export class SearchDataServiceService {
 
   getProductFromSearchBox(productName: string) {
     console.log('productname=' + productName);
-    return this.http.get(`${API_URL}/products/${productName}`)
+    return this.http.get<Product[]>(`${API_URL}/products/${productName}`)
       .pipe(
         map(
           (data) => {
