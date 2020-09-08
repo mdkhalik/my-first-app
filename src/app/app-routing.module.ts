@@ -21,6 +21,7 @@ import { RegistrationSuccessfulComponent } from './registration-successful/regis
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { Sampletest3Component } from './sampletest3/sampletest3.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
     { path: 'welcome/:name', component: WelcomeComponent },
     { path: 'home/:name', component: HomeComponent },
     { path: 'profile', component: ProfileComponent },
+    { path: 'sample3', component: Sampletest3Component },
     { path: 'forgetPassword', component: ForgotPasswordComponent },
     // { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService] },
     { path: 'logout', component: LogoutComponent },

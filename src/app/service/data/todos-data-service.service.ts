@@ -33,7 +33,7 @@ export class TodosDataServiceService {
     // })
     console.log('token value in product='+sessionStorage.getItem('token'));
     //return this.http.get<Product[]>('http://localhost:8088/products/products',{headers});
-    return this.http.get<Product[]>('${API_URL}/products/products');
+    return this.http.get<Product[]>(`${API_URL}/products/products`);
   }
 
   deleteProducts(productid: number){
