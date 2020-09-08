@@ -30,4 +30,16 @@ export class SearchDataServiceService {
   setData(data) {
     this.apiData.next(data)
   }
+
+  addProductToCart(data1:any) {
+    return this.http.post<any>(`${API_URL}/addProductTocart`,{data1})
+    .pipe(
+      map(
+        data => {
+          //this.data = data;
+          console.log('response received'+data);
+        }
+      )
+    )
+  }
 }
