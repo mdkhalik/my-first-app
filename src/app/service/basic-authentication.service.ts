@@ -125,7 +125,7 @@ export class BasicAuthenticationService {
     );
     }
     getProfile(){
-      console.log('inside getProfile()');
+      console.log('inside getProfile()'+sessionStorage.getItem(AUTHENTICATED_USER));
       return this.http.get<any>(`${API_URL}/getProfile/${sessionStorage.getItem(AUTHENTICATED_USER)}`)
     }
 }
