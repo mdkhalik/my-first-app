@@ -35,9 +35,9 @@ export class SearchComponent implements OnInit {
     console.log('data in serach='+this.data);
   }
 
-  addProductToCart(data1: any){
-    console.log('data1='+data1);
-    this.searchDataServiceService.addProductToCart(data1).subscribe(
+  addProductToCart(productid: any,productname: any, price: any){
+    console.log('productname='+productname);
+    this.searchDataServiceService.addProductToCart(productid,productname, price).subscribe(
       data => {
         //this.data = data;
         console.log('response');

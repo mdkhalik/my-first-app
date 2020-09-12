@@ -27,12 +27,13 @@ export class SearchDataServiceService {
   }
 
   // here we set/change value of the observable
-  setData(data) {
+  setData(data: any) {
     this.apiData.next(data)
   }
 
-  addProductToCart(data1:any) {
-    return this.http.post<any>(`${API_URL}/addProductTocart`,{data1})
+  addProductToCart(productid: any,productname: any,price: any) {
+    console.log('productid='+productid+'  ,productname='+productname+' ,price='+price);
+    return this.http.post<any>(`${API_URL}/addProductTocart`,{productid,productname,price})
     .pipe(
       map(
         data => {
