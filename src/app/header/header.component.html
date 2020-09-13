@@ -1,3 +1,6 @@
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
 <body>
     <!-- <div class="container"> -->
         <div class="row">
@@ -9,8 +12,8 @@
         <span class="navbar-toggler-icon"></span>
     </button> -->
              </div>
-            <div class="col-md-6"></div>
-            <div class="col-md-4"> 
+            <div class="col-md-8"></div>
+            <div class="col-md-2"> 
             <div class="navbar-header navbar-expand-lg mt-1">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <ul class="navbar-nav">
@@ -47,14 +50,30 @@
                 <button (click)="handleSearch()" class="btn btn-outline-success my-2 my-sm-0"
                     type="submit">Search</button>
             </form> -->
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="nav-link text-white"
                                     routerLink="/welcome/Manzer">Try Different Layout</a>
+                            </li> -->
+                            <li class="nav-item dropdown" *ngIf="basicAuthenticationService.isUserLoggedIn()" >
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user-circle-o text-white" aria-hidden="true"></i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <!-- <a class="dropdown-item" routerLink="#">Dairy Products</a> -->
+                                    <a class="dropdown-item" routerLink="/profile">Profile</a>
+                                    <a class="dropdown-item" routerLink="/logout">Logout</a>
+                                </div>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="nav-link text-white"
                                     routerLink="/profile">Profile</a>
                             </li>
+                            <li class="nav-item">
+                                <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="nav-link text-white"
+                                    routerLink="/logout" tabindex="-1" aria-disabled="true">Logout</a>
+                            </li> -->
+                            <!-- <i class="fa fa-user-circle-o text-white" aria-hidden="true"></i> -->
                             <li class="nav-item">
                                 <a *ngIf="!basicAuthenticationService.isUserLoggedIn()" class="nav-link text-white"
                                     routerLink="/login">Login</a>
@@ -62,10 +81,6 @@
                             <li class="nav-item">
                                 <a *ngIf="!basicAuthenticationService.isUserLoggedIn()" class="nav-link text-white"
                                     routerLink="/registration">Registration</a>
-                            </li>
-                            <li class="nav-item">
-                                <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="nav-link text-white"
-                                    routerLink="/logout" tabindex="-1" aria-disabled="true">Logout</a>
                             </li>
                         <!-- </button> -->
                         </ul>

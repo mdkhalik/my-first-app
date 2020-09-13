@@ -39,10 +39,15 @@ export class ProductComponent implements OnInit {
   employee: Employee[];
   student: Student[];
   products: Product[];
+
+  dt: any; 
+  dataDisplay: any;
+
   constructor(private todoDataService: TodosDataServiceService){
   } 
 
   ngOnInit(): void {
+    
     this.todoDataService.retrieveAllEmployees().subscribe(
       (response: any) => {
         console.log('response body' + response.body);
@@ -57,11 +62,25 @@ export class ProductComponent implements OnInit {
     );
     this.todoDataService.retrieveAllProducts().subscribe(
       (response: any) => {
+         
         console.log('token value while retrieving product='+sessionStorage.getItem('token'));
         console.log('response body' + response.body);
         this.products = response;
+        if (response) { 
+          hideloader(); 
+        } 
+      console.log(response) 
+      this.dt = response; 
+      this.dataDisplay = this.dt.data; 
       }
     );
+    function hideloader() { 
+  
+      // Setting display of spinner 
+      // element to none 
+      document.getElementById('loading') 
+          .style.display = 'none'; 
+  } 
     //  this.todoDataService.retrieveAllTodos('in28minutes').subscribe(
     //   (response: any) =>
     //   { 
@@ -75,6 +94,6 @@ export class ProductComponent implements OnInit {
         console.log('deleted');
       }
     );
-  }
 
+    }
 }
