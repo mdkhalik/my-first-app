@@ -3,7 +3,9 @@ body{
     /* background: #0F3037;
     background: linear-gradient(to right,#2c5364,#203a43,#0f2027); */
 }
-
+p{
+    font-size: 30px;
+ } 
 .navbar-toggle{
     padding: 0;
 border: none;

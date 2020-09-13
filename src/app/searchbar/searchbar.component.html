@@ -9,13 +9,13 @@
     <form *ngIf="basicAuthService.isUserLoggedIn()">
         <div class="container">
             <div class="inner row">
-                <div class="col-sm-6 d-flex justify-content-center mt-2"
+                <div class="col-sm-6 d-flex justify-content-center"
                     style="margin-bottom: 0px;margin-left:200px;margin-top: 0px;">
                     <input class="form-control form-control-md form-control-borderless justify-content-center"
                         type="search" placeholder="Search By Product ID" name="searchItem" value="{{searchItem}}"
                         [(ngModel)]="searchItem">
                 </div>
-                <div class="col-md-2 mt-2">
+                <div class="col-md-2">
                     <button (click)="handleSearch()" style="margin-top: 0px;margin-bottom: 0px;"
                         class="btn btn-md btn-success" type="submit">Search</button>
                 </div>
