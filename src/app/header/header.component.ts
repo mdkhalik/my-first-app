@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BasicAuthenticationService } from '../service/basic-authentication.service';
+import { BasicAuthenticationService, AUTHENTICATED_USER } from '../service/basic-authentication.service';
 import { SearchDataServiceService } from '../service/search-data-service.service';
 import { Router } from '@angular/router';
 
@@ -36,15 +36,23 @@ export class HeaderComponent implements OnInit {
     this.username1 = sessionStorage.getItem('authenticatedUser')
   }
 
-  handleSearch(): void {
-    if (this.searchDataServiceService.getProductFromSearchBox('Co0py') != null) {
-      this.searchDataServiceService.getProductFromSearchBox('Co0py').subscribe(
-        (response: any) => {
-          console.log('response body' + response.body);
-          this.product = response;
-        }
-      );
-      this.router.navigate(['search'])
-    }
+  retrieveUserCart(){
+    this.basicAuthService.retrieveUserCart(sessionStorage.getItem(AUTHENTICATED_USER)).subscribe(
+      response =>{
+       console.log('reponse received');
+      }
+    )
   }
+
+  // handleSearch(): void {
+  //   if (this.searchDataServiceService.getProductFromSearchBox('Co0py') != null) {
+  //     this.searchDataServiceService.getProductFromSearchBox('Co0py').subscribe(
+  //       (response: any) => {
+  //         console.log('response body' + response.body);
+  //         this.product = response;
+  //       }
+  //     );
+  //     this.router.navigate(['search'])
+  //   }
+  // }
 }

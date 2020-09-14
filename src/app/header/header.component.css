@@ -4,10 +4,14 @@ body{
     background: linear-gradient(to right,#2c5364,#203a43,#0f2027); */
 }
 p{
-    font-size: 30px;
+    font-size: 20px;
  } 
 .navbar-toggle{
     padding: 0;
 border: none;
 background: none;
+}
+button{
+    background: #2c5364;
+    border: 0px;
 }

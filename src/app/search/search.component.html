@@ -3,9 +3,11 @@
     </head>
 <body>
     <div class="container mt-3">
+        Total number of record found : 
     <table class="table table-bordered table-striped">
     <thead>
         <tr>
+            <th>Number of Items</th>
             <th>Product ID</th>
             <th>Product Name</th>
             <th>Purchase Amount</th>
@@ -19,6 +21,7 @@
     </thead>
     <tbody id="myTable">
         <tr *ngFor="let data1 of data">
+            <td>{{count}}</td>
             <td>{{data1.productid}}</td>
             <td>{{data1.productname}}</td>
             <td>{{data1.price}}</td>

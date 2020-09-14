@@ -36,17 +36,17 @@ export class MenuComponent implements OnInit {
     this.username1 = sessionStorage.getItem('authenticatedUser')
   }
 
-  handleSearch(): void {
-    if (this.searchDataServiceService.getProductFromSearchBox('Co0py') != null) {
-      this.searchDataServiceService.getProductFromSearchBox('Co0py').subscribe(
-        (response: any) => {
-          console.log('response body' + response.body);
-          this.product = response;
-        }
-      );
-      this.router.navigate(['search'])
-    }
+  // handleSearch(): void {
+  //   if (this.searchDataServiceService.getProductFromSearchBox('Co0py') != null) {
+  //     this.searchDataServiceService.getProductFromSearchBox('Co0py').subscribe(
+  //       (response: any) => {
+  //         console.log('response body' + response.body);
+  //         this.product = response;
+  //       }
+  //     );
+  //     this.router.navigate(['search'])
+  //   }
 
-  }
+  // }
 
 }

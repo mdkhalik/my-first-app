@@ -22,6 +22,7 @@ export class Product {
 })
 export class SearchComponent implements OnInit {
   data: Product[];
+  count :string;
   constructor(public searchDataServiceService:SearchDataServiceService) { 
     searchDataServiceService.apiData$.subscribe(
       data => {

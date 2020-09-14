@@ -13,6 +13,9 @@ export class AuthenticationBean {
   providedIn: 'root'
 })
 export class BasicAuthenticationService {
+  retrieveUserCart(email:string) {
+    return this.http.get<any>(`${API_URL}\retrieveUserCart\{email}`);
+  }
 
   email: string = '';
   constructor(public http: HttpClient) { }

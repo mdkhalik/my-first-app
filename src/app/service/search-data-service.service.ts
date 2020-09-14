@@ -5,6 +5,7 @@ import { Product } from '../product/product.component';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { API_URL } from '../app.constant';
+import { AUTHENTICATED_USER } from './basic-authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -32,8 +33,10 @@ export class SearchDataServiceService {
   }
 
   addProductToCart(productid: any,productname: any,price: any) {
+    let email = sessionStorage.getItem(AUTHENTICATED_USER);
+    console.log('email='+email)
     console.log('productid='+productid+'  ,productname='+productname+' ,price='+price);
-    return this.http.post<any>(`${API_URL}/addProductTocart`,{productid,productname,price})
+    return this.http.post<any>(`${API_URL}/user/${email}/addProductTocart`,{productid,productname,price})
     .pipe(
       map(
         data => {
