@@ -1,5 +1,5 @@
-<!-- Welcome {{name}} How are you and thank you to visit us
-<a routerLink="/todos">Click here</a>
+<!-- Welcome {{name}}, thank you to visit us -->
+<!--<a routerLink="/todos">Click here</a>
 <button (click)="getWelcomeData()" type="button" class="btn btn-success">Get Welcome Message</button>
 <div class="container" *ngIf="welcomeMessageFromService" >
     Your message here {{  welcomeMessageFromService }}
@@ -7,27 +7,109 @@
 <div class="container" *ngIf="errorMessageFromService" >
     Error Here {{errorMessageFromService}}
 </div> -->
-<div class="row">
-  <div class="col-sm-3">
-    <div class="card-header">
-      ALL COLLECTIONS
+
+<body>
+  <div class="banner">
+    <!-- <div class="col-sm-12" style="border: 0ch;"> -->
+    <div class="inner">
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <img src="assets\Images\carousel\1-Aug-2020-carousel-Halfprice.jpg" style="width:1200px;height:350px" alt="Channai Metro">
+          <div class="carousel-caption">
+            <h3 style="color: yellow">.</h3>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="assets\Images\carousel\1-Aug-2020-carousel-Independence.jpg" style="width:1200px;height:350px" alt="Jaipur Metro">
+          <div class="carousel-caption">
+            <h3 style="color: yellow">..</h3>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="assets\Images\carousel\1-Aug-2020-carousel-Savings1.jpg" style="width:1200px;height:350px" alt="Mumbai Metro">
+          <div class="carousel-caption">
+            <h3 style="color: yellow">...</h3>
+          </div>
+        </ng-template>
+        <!-- <ng-template ngbSlide>
+          <img src="assets\Images\welcome\millatMart4.jpg" style="width:1200px;height:350px" alt="Mumbai Metro">
+          <div class="carousel-caption">
+            <h3 style="color: yellow">....</h3>
+          </div>
+        </ng-template> -->
+      </ngb-carousel>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Dairy Product</li>
-      <li class="list-group-item">Bakery Items</li>
-      <li class="list-group-item">Fruits & Vegetables</li>
-      <li class="list-group-item">Cereals & Pulses</li>
-      <li class="list-group-item">New Product</li>
-    </ul>
+    <!-- </div> -->
   </div>
-  <!-- <div class="col-sm-9"> -->
-  <div class="card col-sm-9 row- bg-dark text-white">
-    <img class="card-img" src="Desert.jpg" alt="Card image">
-    <!-- <div class="card-img-overlay">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text">Last updated 3 mins ago</p>
-      </div> -->
+  <br>
+  <div>
+    <div style="font-size: 40px;color:brown;text-align: center;">Kitchen & Food Cupboard</div>
+    <!-- <p style="margin-left: 30px;margin-right: 30px;font-size: 20px;color:brown;">Millat mart is a new concept retail store whose aim is to provide freshest and pure food products to you, our valuable customers. What makes us unique is Wonder Atta Mart(WAM) and Shrihit food grocery products. You can order your groceries through our website and mobile application and get it delivered right at your doorsteps.</p> -->
   </div>
-  <!-- </div> -->
-</div>
+  <br>
+  <!-- start of card-deck 1-->
+  <!-- <div class="container">
+    <div class="animated slideInDown text-center bg-primary text-white p-5">
+      <h1 class="">Animate.css</h1>
+    </div>
+  </div> -->
+  <!-- <div class="card-deck animated slideInDown" style="margin-left: 80px;margin-right: 80px;"> -->
+
+  <div class="container">
+    <div class="card-deck animated slideInDown mx-auto">
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\fruits-nuts.png" alt="Card image cap">
+      </div>
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\health-care-1.png" alt="Card image cap">
+      </div>
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\household.png" alt="Card image cap">
+      </div>
+    </div>
+    <br>
+    <!-- start of card-deck 2-->
+    <div class="card-deck animated slideInDown mx-auto">
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\jams.png" alt="Card image cap">
+      </div>
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\mayonise.png" alt="Card image cap">
+      </div>
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\mixed-pickle.png" alt="Card image cap">
+      </div>
+    </div>
+    <br>
+    <!-- start of card-deck 3-->
+    <div class="card-deck animated slideInDown mx-auto">
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\oats.png" alt="Card image cap">
+      </div>
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\oil-ghee.png" alt="Card image cap">
+      </div>
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\personal-care-1.png" alt="Card image cap">
+      </div>
+    </div>
+    <br>
+    <!-- start of card-deck 4-->
+    <div class="card-deck animated slideInDown mx-auto">
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\ready-to-eat.png" alt="Card image cap">
+      </div>
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\snack-food.png" alt="Card image cap">
+      </div>
+      <div class="card">
+        <img class="card-img" src="assets\Images\welcome\cards\tea-coffee-1.png" alt="Card image cap">
+      </div>
+    </div>
+    <br>
+    <div class="card animated slideInDown mx-auto">
+      <img class="card-img" src="assets\Images\welcome\cards\wondermart-banner.png"
+        alt="Card image cap">
+    </div>
+  </div>
+</body>

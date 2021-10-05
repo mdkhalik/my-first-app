@@ -1,19 +1,26 @@
-<p>list-todos works!</p>
-<table class="table table-bordered">
+<!-- <table class="table table-bordered">
     <thead>
         <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>deptname</th>
-            <!-- <th>joiningDate</th> -->
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Purchase Amount</th>
+            <th>Category</th>
+            <th>Availability</th>
+            <th>Cash-On-Delivery</th>
+            <th>Availability Date</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let student1 of student">
-            <td>{{student1.studentId}}</td>
-            <td>{{student1.name}}</td>
-            <td>{{student1.course}}</td>
-            <!-- <td>{{employee1.joiningDate}}</td> -->
+        <tr *ngFor="let product of products">
+            <td>{{product.productid}}</td>
+            <td>{{product.productname}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.availability}}</td>
+            <td>{{product.cod}}</td>
+            <td>{{product.insertiondate}}</td>
+            <td><button (click)="deleteProduct(product.productid)">Add to Cart</button></td>
         </tr>
     </tbody>
-</table>
+</table> -->

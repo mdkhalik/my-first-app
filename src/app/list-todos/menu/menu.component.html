@@ -1,42 +1,100 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">MillatMart</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
-                    routerLink="/welcome/Manzer">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
-                    routerLink="/todos">Todos</a>
-            </li>
-            <li class="nav-item">
-                <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
-                    routerLink="/product">Product</a>
-            </li>
-            <li class="nav-item">
-                <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
-                    routerLink="/contact">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
-                    routerLink="/aboutus">About</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav navbar-collapse justify-content-end">
-            <li class="nav-item">
-                <a *ngIf="!hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
-                    routerLink="/login">Login</a>
-            </li>
-            <li class="nav-item">
-                <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link" routerLink="/logout"
-                    tabindex="-1" aria-disabled="true">Logout</a>
-            </li>
-        </ul>
+<body>
+    <div class="container" *ngIf="basicAuthenticationService.isUserLoggedIn()">
+        <nav class="row">
+            <!-- <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="navbar-brand" href="assets\millat4.JPG"><img
+                        src="assets\millatMart.ico" alt="MillatMart" /></a> -->
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+            <!-- <div class="row"> -->
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-8 mt-2">
+                <div class="navbar-header navbar-expand-lg mt-2">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" routerLink="/home/Manzer">Home <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" routerLink="/product">Product</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" routerLink="/contact">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" routerLink="/aboutus">About</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" routerLink="/welcome/Manzer">Services<span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link text-white"
+                                    routerLink="/product">All Collections</a>
+                            </li>  -->
+                            <!-- <button type="button" class="btn btn-rounded btn-sm btn-info mt-2">Dairy Product</button> -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Our Products
+                                </a>
+                                <div class="dropdown-menu">
+                                    <!-- <a class="dropdown-item" routerLink="#">Dairy Products</a> -->
+                                    <div class="btn-group dropright">
+                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Dairy Products
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <!-- <a class="dropdown-item" routerLink="#">Dairy Products</a> -->
+                                            <a class="dropdown-item" href="#">Dairy Products</a>
+                                            <a class="dropdown-item" href="#">Bakery Items</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                    <a class="dropdown-item" routerLink="#">Bakery Items</a>
+                                    <a class="dropdown-item" routerLink="#">Something else here</a>
+                                </div>
+                            </li>
+                            <!-- <li class="nav-item">
+                    <a *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="nav-link"
+                        routerLink="/help">Help</a>
+                </li> -->
+                        </ul>
+                        <ul class="navbar-nav navbar-collapse justify-content-end">
+                            <!-- <form *ngIf="hardCodedAuthenticationService.isUserLoggedIn()" class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search By Productname"
+                        aria-label="Search">
+                    <button (click)="handleSearch()" class="btn btn-outline-success my-2 my-sm-0"
+                        type="submit">Search</button>
+                </form> -->
+                            <!-- <li class="nav-item">
+                    <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="nav-link"
+                        routerLink="/aboutus">Welcome {{username1}}</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="!basicAuthenticationService.isUserLoggedIn()" class="nav-link"
+                        routerLink="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="!basicAuthenticationService.isUserLoggedIn()" class="nav-link"
+                        routerLink="/signup">SignUp</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="basicAuthenticationService.isUserLoggedIn()" class="nav-link" routerLink="/logout"
+                        tabindex="-1" aria-disabled="true">Logout</a>
+                </li> -->
+
+
+                        </ul>
+                    </button>
+                </div>
+            </div>
+            <!-- </div> -->
+        </nav>
+
     </div>
-</nav>
-<br><br>
+</body>

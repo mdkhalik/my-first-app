@@ -1,25 +1,52 @@
-<div class="col d-flex justify-content-center">
-    <div class="card">
-        <div class="card text-white bg-info mb-3 p-6 text-center">
-            <blockquote class="blockquote mb-0 card-body">
-                <p> Login</p>
-                <br>
-                <form>
-                    <small *ngIf="inValidLogin">{{errorMessage}}</small>
-                    Username : <input type="text" name="name" value="{{username}}" [(ngModel)]="username">
-                    <br><br>
-                    Password : <input type="password" name="password" value="{{password}}" [(ngModel)]="password">
-                    <br><br>
-                    <button (click)="handleLogin()">Sign in</button>
-                    <!-- <div class="form-check">
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-3 animated slideInUp">
+        <a href="assets\millat4.JPG"><img src="assets\millatMart.ico" class="rounded mx-auto d-block"
+                alt="MillatMart" /></a>
+    </div>
+    <br>
+    <div class="container animated slideInUp p-4">
+        <div class="inner">
+            <!-- <div class="col d-flex justify-content-center"> -->
+            <!-- <div class="card"> -->
+            <!-- <div class="card text-white mb-3 p-6 text-center"> -->
+            <div class="card text-black text-center">
+                <!-- <blockquote class="blockquote mb-0 card-body"> -->
+                <div class="card-body">
+                    <p> Login</p>
+                    <form>
+                        <small *ngIf="inValidLogin">{{errorMessage}}</small>
+                        <br>
+                        <p> Email ID : <input type="username" name="username" value="{{username}}" [(ngModel)]="username"
+                                required></p>
+                        <br>
+                        <p>Password : <input type="password" name="password" value="{{password}}"
+                                [(ngModel)]="password"></p>
+                        <br>
+                        <button type="button" (click)="handleLogin()">Sign in</button>
+                        <!-- <button (click)="handleBasicAuthLogin()">Basic Auth SignIn</button> -->
+                        <button (click)="handleJWTAuthLogin()">JWT Auth SignIn</button>
+                        <a routerLink="/forgetPassword" >Forget Password</a>
+                        <!-- <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck1">
                         <label class="form-check-label" for="gridCheck1">
                                 Example checkbox
                         </label>
                     </div> -->
 
-                </form>
-            </blockquote>
+                    </form>
+                    {{userStatus}}
+                </div>
+            </div>
+            <!-- </div> -->
+            <!-- </div> -->
         </div>
     </div>
-</div>
+</body>
+</html>
