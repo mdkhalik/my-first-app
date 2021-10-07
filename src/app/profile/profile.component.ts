@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
   lastName: string;
   email: string;
   password: string;
-  user= User;
+  user: User;
   constructor(private basicAuthService: BasicAuthenticationService) { }
 
   ngOnInit(): void {
@@ -29,7 +29,9 @@ export class ProfileComponent implements OnInit {
       (response: any) => {
         console.log('profile api response' + response);
         this.user = response;
-        console.log('first='+this.user)
+        console.log('firstName='+this.user.firstName)
+        console.log('lastName='+this.user.lastName)
+        console.log('email='+this.user.email)
       }
     );
     //  this.fname = sessionStorage.getItem('password');
