@@ -20,7 +20,8 @@ export class ForgotPasswordComponent implements OnInit {
   angForm: FormGroup;
   inValidEmail =  false;
   errorEmailMessage : string;
-  statusMessage: string;
+  statusMessage: string = '';
+  successMessage: boolean = false;
   //data: any;
 
 
@@ -45,23 +46,28 @@ export class ForgotPasswordComponent implements OnInit {
         //console.log('fName' + data.data.fName);
         console.log('inside data loop of reset password'+data);
         //this.data = data;
-        this.statusMessage = data.statusMessage;
-        this.router.navigate(["/reset"]);
-        //if (data['name'] != null) {
-        //console.log(`data before navigation${data}`)
-        //this.router.navigate(['../home', this.username])
-        //working fine if authguard not availablethis.router.navigate(['../sample2'])
-        //this.router.navigateByUrl(['/welcome', this.username])
-        //this.router.navigate(["../product"])
-        //console.log(`data after navigation${data}`)
-        //this.inValidLogin = false;
-        //}
+        this.statusMessage = 'Email Verfied, token will be sent to you registered email, click on Next';
+        this.successMessage = true;
       },
       error => {
         console.log("error data before navigation" + error)
         this.statusMessage = error.error.statusMessage;
+      }
+    )
+  }
+  next(){
+    this.basicAuthService.checkEmail(this.email).subscribe(
+      data => {
         //console.log('fName' + data.data.fName);
-        //console.log('inside error loop of reset password');
+        console.log('inside data loop of reset password'+data);
+        //this.data = data;
+        this.statusMessage = data.statusMessage;
+        this.router.navigate(["/reset"]);
+      },
+      error => {
+        console.log("error data before navigation" + error)
+        this.statusMessage = error.error.statusMessage;
+       
       }
     )
   }
