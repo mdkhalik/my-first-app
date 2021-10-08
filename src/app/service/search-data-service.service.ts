@@ -40,8 +40,8 @@ export class SearchDataServiceService {
     .pipe(
       map(
         data => {
-          //this.data = data;
           console.log('response received'+data);
+          return data;
         }
       )
     )

@@ -23,6 +23,8 @@ export class Product {
 export class SearchComponent implements OnInit {
   data: Product[];
   count :string;
+  validResponse : boolean = false;
+  successMessage: string ='Product Added to cart'
   constructor(public searchDataServiceService:SearchDataServiceService) { 
     searchDataServiceService.apiData$.subscribe(
       data => {
@@ -40,8 +42,8 @@ export class SearchComponent implements OnInit {
     console.log('productname='+productname);
     this.searchDataServiceService.addProductToCart(productid,productname, price).subscribe(
       data => {
-        //this.data = data;
-        console.log('response');
+        this.validResponse = true;
+        console.log('response: '+data);
       }
       )
   }
