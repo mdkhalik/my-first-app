@@ -45,6 +45,8 @@ import { RegistrationSuccessfulComponent } from './registration-successful/regis
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { Sampletest3Component } from './sampletest3/sampletest3.component';
+import { UpdateEmailComponent } from './updateEmail/updateEmail.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 @NgModule({
@@ -85,7 +87,9 @@ import { Sampletest3Component } from './sampletest3/sampletest3.component';
     RegistrationSuccessfulComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    Sampletest3Component
+    Sampletest3Component,
+    UpdateEmailComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

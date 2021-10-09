@@ -13,11 +13,11 @@ export class AuthenticationBean {
   providedIn: 'root'
 })
 export class BasicAuthenticationService {
+
   retrieveUserCart(email:string) {
     return this.http.get<any>(`${API_URL}\retrieveUserCart\{email}`);
   }
 
-  email: string = '';
   constructor(public http: HttpClient) { }
 
   //   createBasicAuthenticationHttpHeader(){
@@ -127,8 +127,35 @@ export class BasicAuthenticationService {
       )
     );
     }
-    getProfile(){
+  getProfile(){
       console.log('inside getProfile()'+sessionStorage.getItem(AUTHENTICATED_USER));
       return this.http.get<any>(`${API_URL}/getProfile/${sessionStorage.getItem(AUTHENTICATED_USER)}`)
-    }
+  }
+
+  changePassword(email:string){
+      let mail = sessionStorage.getItem(AUTHENTICATED_USER);
+      return this.http.post<any>(`${API_URL}/changePassword`,{email})
+      .pipe(
+        map(
+          data => {
+            console.log("response="+data+" message="+data.message)
+            return data;
+          }
+        )
+      );
+ }
+ updateEmail(email:string,newEmail:string){
+      //let mail = sessionStorage.getItem(AUTHENTICATED_USER);
+      console.log('email='+email);
+      console.log('newEmail='+newEmail);
+      return this.http.post<any>(`${API_URL}/updateEmail`,{email, newEmail})
+      .pipe(
+        map(
+          data => {
+            console.log("response="+data+" message="+data.message)
+            return data;
+          }
+        )
+      );
+ }
 }

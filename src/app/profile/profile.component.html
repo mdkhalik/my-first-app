@@ -17,13 +17,13 @@
             <tbody>
                 <tr>
                     <td>Email</td>
-                    <td>{{this.user.email}}</td>
+                    <td><p>{{this.user.email}}</p><button (click)="doUpdateEmail()">Update Email</button></td>
                 </tr>
             </tbody>
             <tbody>
-                <tr>
+                <tr id="container">
                     <td>Password</td>
-                    <td>{{this.user.password}}</td>
+                    <td><p>{{this.user.password}}</p><button (click)="changePassword(this.user.email)">Change Password</button></td>
                 </tr>
             </tbody>
         </table>

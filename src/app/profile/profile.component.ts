@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BasicAuthenticationService } from '../service/basic-authentication.service';
+import { Router } from '@angular/router';
+import { AUTHENTICATED_USER, BasicAuthenticationService } from '../service/basic-authentication.service';
 export class User {
   constructor(
       public id: number,
@@ -21,7 +22,9 @@ export class ProfileComponent implements OnInit {
   email: string;
   password: string;
   user: User;
-  constructor(private basicAuthService: BasicAuthenticationService) { }
+  newEmail : string;
+  constructor(private basicAuthService: BasicAuthenticationService,
+    private router: Router) { }
 
   ngOnInit(): void {
      //this.email = sessionStorage.getItem('authenticatedUser');
@@ -39,4 +42,24 @@ export class ProfileComponent implements OnInit {
     //  this.mobile = sessionStorage.getItem('mobile');
   } 
 
+  changePassword(email:string){
+       let mail = sessionStorage.getItem(AUTHENTICATED_USER);
+       return this.basicAuthService.changePassword(email).subscribe(
+         data => {
+           console.log('inside change password');
+         }
+     )
+  }
+  // updateEmail(email:string , newEmail:string){
+  //      let mail = sessionStorage.getItem(AUTHENTICATED_USER);
+  //      return this.basicAuthService.updateEmail(email, newEmail).subscribe(
+  //       data => {
+  //         console.log('inside update email');
+  //       }
+  //     )
+  // }
+
+  doUpdateEmail(){
+    this.router.navigate(["/updateEmail"]);
+  }
 }

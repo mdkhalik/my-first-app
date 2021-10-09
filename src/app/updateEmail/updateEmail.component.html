@@ -1,0 +1,37 @@
+<body>
+    <!-- https://www.codingame.com/playgrounds/8012/angular-form-validation-example-tutorial -->
+    <div class="container col-sm-6">
+        <div class="inner mt-5">
+            <div class="card text-black justify-content-center">
+                <div class="card-body justify-content-center">
+                    <form [formGroup]="angForm1" novalidate>
+                       <!--Email-->
+                       <div class="form-group row">
+                        <label for="email" class="col-sm-3 text-black col-form-label">Enter New Email:</label>
+                        <div class="col-sm-5">
+                            <input class="form-control" formControlName="email" type="email" value="{{newEmail}}"
+                                [(ngModel)]="newEmail">
+                        </div>
+
+                        <div *ngIf="angForm1.controls['email'].invalid && (angForm1.controls['email'].dirty || angForm1.controls['email'].touched)"
+                            class="alert alert-danger">
+                            <div *ngIf="angForm1.controls['email'].errors.required">
+                                Email Required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mr-5">
+                        <button class="pull-text-center" (click)="updateEmail()" type="submit"
+                            [disabled]="angForm1.pristine || angForm1.invalid" class="btn btn-success">
+                            Submit
+                        </button>
+                    </div>
+                    </form>
+                    <br />
+                    <span *ngIf="this.validResponse == true" class="text text-black">{{statusMessage}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

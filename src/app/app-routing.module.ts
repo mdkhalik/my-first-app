@@ -22,6 +22,8 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { Sampletest3Component } from './sampletest3/sampletest3.component';
+import { UpdateEmailComponent } from './updateEmail/updateEmail.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -43,7 +45,9 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent, canActivate: [RouteGuardService] },
     { path: 'aboutus', component: AboutComponent, canActivate: [RouteGuardService] },
     { path: 'searchBar', component: SearchbarComponent, canActivate: [RouteGuardService] },
-   { path: 'searchComponent', component: SearchComponent, canActivate: [RouteGuardService] },
+    { path: 'searchComponent', component: SearchComponent, canActivate: [RouteGuardService] },
+    { path: 'updateEmail', component: UpdateEmailComponent, canActivate: [RouteGuardService] },
+    { path: 'changePassword', component: ChangePasswordComponent, canActivate: [RouteGuardService] },
     { path: '**', component: ErrorComponent }
 ];
 
