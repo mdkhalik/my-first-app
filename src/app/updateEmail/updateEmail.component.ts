@@ -29,7 +29,6 @@ export class UpdateEmailComponent implements OnInit {
   }
 
   updateEmail(){
-          let mail = sessionStorage.getItem(AUTHENTICATED_USER);
         return this.basicAuthService.updateEmail(this.email, this.newEmail).subscribe(
            data => {
              this.validResponse = true;

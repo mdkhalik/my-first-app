@@ -17,7 +17,7 @@ export class ResetPasswordComponent implements OnInit {
    passwordToken:string;
    message: string;
    code:number;
-   statusMessage: string;
+   statusMessage: string = 'Password reset successfully';
    
    constructor(private formBuilder: FormBuilder,
      public basicAuthService:BasicAuthenticationService){ 

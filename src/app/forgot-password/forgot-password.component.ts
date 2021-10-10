@@ -44,10 +44,12 @@ export class ForgotPasswordComponent implements OnInit {
     this.basicAuthService.checkEmail(this.email).subscribe(
       data => {
         //console.log('fName' + data.data.fName);
-        console.log('inside data loop of reset password'+data);
+        console.log('inside data of forgetPassword='+data);
         //this.data = data;
-        this.statusMessage = 'Email Verfied, token will be sent to you registered email, click on Next';
-        this.successMessage = true;
+        this.statusMessage = data.statusMessage;
+        console.log('this.statusMessage==='+this.statusMessage);
+        if(this.statusMessage == 'Email Verfied, token will be sent to you registered email, click on Next')
+            this.successMessage = true;
       },
       error => {
         console.log("error data before navigation" + error)
@@ -59,7 +61,7 @@ export class ForgotPasswordComponent implements OnInit {
     this.basicAuthService.checkEmail(this.email).subscribe(
       data => {
         //console.log('fName' + data.data.fName);
-        console.log('inside data loop of reset password'+data);
+        console.log('inside next()='+data);
         //this.data = data;
         this.statusMessage = data.statusMessage;
         this.router.navigate(["/reset"]);
