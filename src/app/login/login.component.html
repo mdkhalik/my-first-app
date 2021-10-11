@@ -30,11 +30,13 @@
                                 [(ngModel)]="password"></p>
                         <i [class]="show_eye ? 'fa fa-eye' : 'fa fa-eye-slash'" (click)="showPassword()">Show password</i>
                         <br>
+                        <br>
                         <!-- <button type="button" (click)="handleLogin()">Sign in</button> -->
                         <!-- <button (click)="handleBasicAuthLogin()">Basic Auth SignIn</button> -->
-                        <button (click)="handleJWTAuthLogin()">Login</button>
+                        <button (click)="handleJWTAuthLogin()">Login</button> | <a routerLink="/forgetPassword" >Forget Password ?</a>
                         <br>
-                        <a routerLink="/forgetPassword" >Forget Password</a>
+                        <br>
+                       
                         <!-- <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck1">
                         <label class="form-check-label" for="gridCheck1">
