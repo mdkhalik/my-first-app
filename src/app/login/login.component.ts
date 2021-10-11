@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
   errorMessage = 'Invalid Credentials';
   inValidLogin = false;
   userStatus: string;
+  show_button: Boolean = false;
+  show_eye: Boolean = false;
   constructor(private router: Router,
     //public hardCodedAuthenticationService: HardCodedAuthenticationServiceService,
     public basicAuthService: BasicAuthenticationService) { }
@@ -76,4 +78,9 @@ export class LoginComponent implements OnInit {
       }
     )
   }
+  //Function
+showPassword() {
+  this.show_button = !this.show_button;
+  this.show_eye = !this.show_eye;
+}
 }
