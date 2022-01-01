@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- <div class="container mt-2 animated slideInUp">
+        <a href="assets\millat4.JPG"><img src="assets\millatMart.ico" class="rounded mx-auto d-block"
+                alt="MillatMart" /></a>
+    </div> -->
+    <br>
+    <div class="container col-md-6 animated slideInUp p-4 bg-primary">
+        <div class="inner col-md-9 bg-danger">
+            <!-- <div class="col d-flex justify-content-center"> -->
+            <!-- <div class="card"> -->
+            <!-- <div class="card text-white mb-3 p-6 text-center"> -->
+            <div class="card font-weight-bold bg-success">
+                <!-- <blockquote class="blockquote mb-0 card-body"> -->
+                <!-- <div class="card-body bg-info"> -->
+                    <div class="row mx-2 animated slideInUp">
+                        <a href="assets\millat4.JPG"><img src="assets\millatMart.ico" class="rounded mx-auto d-block"
+                                alt="MillatMart" /></a>
+                    </div>
+                    <!-- <p> Login</p> -->
+                    <form>
+                        <small *ngIf="inValidLogin">{{errorMessage}}</small>
+                        <br>
+                        <p> Email ID : <input type="username" name="username" value="{{username}}" [(ngModel)]="username"
+                                required></p>
+                        <br>
+                        <p>Password : <input [type]="show_button ? 'text' : 'password'" name="password" value="{{password}}"
+                                [(ngModel)]="password"></p>
+                        <i [class]="show_eye ? 'fa fa-eye' : 'fa fa-eye-slash'" (click)="showPassword()">Show password</i>
+                        <br>
+                        <br>
+                        <!-- <button type="button" (click)="handleLogin()">Sign in</button> -->
+                        <!-- <button (click)="handleBasicAuthLogin()">Basic Auth SignIn</button> -->
+                        <div class="d-inline">
+                            <button class="btn btn-primary border border-rounded" (click)="handleJWTAuthLogin()">Login</button> 
+                            | 
+                            <a routerLink="/forgetPassword" >Forget Password ?</a>
+                        </div>
+                        <br>
+                        <br>
+                       
+                        <!-- <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                        <label class="form-check-label" for="gridCheck1">
+                                Example checkbox
+                        </label>
+                    </div> -->
+
+                    </form>
+                    {{userStatus}}
+                <!-- </div> -->
+            </div>
+            <!-- </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+</body>
+</html>

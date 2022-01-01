@@ -6,35 +6,56 @@
 </head>
 
 <body>
-    <div class="container mt-2 animated slideInUp">
+    <!-- <div class="container mt-2 animated slideInUp">
         <a href="assets\millat4.JPG"><img src="assets\millatMart.ico" class="rounded mx-auto d-block"
                 alt="MillatMart" /></a>
-    </div>
-    <br>
-    <div class="container col-md-6 animated slideInUp p-4">
-        <div class="inner">
+    </div> -->
+    <div class="container col-md-5 animated slideInUp d-flex mt-4 border">
+        <div class="inner col-md-9">
             <!-- <div class="col d-flex justify-content-center"> -->
             <!-- <div class="card"> -->
             <!-- <div class="card text-white mb-3 p-6 text-center"> -->
-            <div class="card text-black text-center">
+            <!-- <div class="card font-weight-bold bg-success"> -->
                 <!-- <blockquote class="blockquote mb-0 card-body"> -->
-                <div class="card-body">
-                    <p> Login</p>
+                <!-- <div class="card-body bg-info"> -->
+                    <!-- <div class="row mx-2 animated slideInUp"> -->
+                        <a href="assets\millat4.JPG" class="animated slideInUp m-4"><img src="assets\millatMart.ico" class="rounded mx-auto d-block"
+                                alt="MillatMart" /></a>
+                    <!-- </div> -->
+                    <!-- <p> Login</p> -->
                     <form>
-                        <small *ngIf="inValidLogin">{{errorMessage}}</small>
-                        <br>
-                        <p> Email ID : <input type="username" name="username" value="{{username}}" [(ngModel)]="username"
-                                required></p>
-                        <br>
-                        <p>Password : <input [type]="show_button ? 'text' : 'password'" name="password" value="{{password}}"
-                                [(ngModel)]="password"></p>
+                        <div class="form-group row">
+                            <!-- <br> -->
+                            <label class="col-md-4 col-form-label text-left" for="email">Email ID :</label>
+                            <div class="col-md-8">
+                                <input type="text" name="username" id="username1" class="form-control" value="{{username}}" [(ngModel)]="username"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <!-- <br> -->
+                            <label class="col-md-4 col-form-label text-left" for="password">Password : </label>
+                            <div class="col-md-8">
+                                <input [type]="show_button ? 'text' : 'password'" name="password" id="password1" class="form-control" value="{{password}}" [(ngModel)]="password"
+                                    required/>
+                            </div>
+                        </div>
                         <i [class]="show_eye ? 'fa fa-eye' : 'fa fa-eye-slash'" (click)="showPassword()">Show password</i>
                         <br>
                         <br>
                         <!-- <button type="button" (click)="handleLogin()">Sign in</button> -->
                         <!-- <button (click)="handleBasicAuthLogin()">Basic Auth SignIn</button> -->
-                        <button (click)="handleJWTAuthLogin()">Login</button> | <a routerLink="/forgetPassword" >Forget Password ?</a>
-                        <br>
+                        <!-- <div class="d-inline-block col-md-12"> -->
+                        <div class="form-group">
+                            <div>
+                              <button class="btn btn-block btn-primary" (click)="handleJWTAuthLogin()">Login</button> 
+                            </div>
+                            <div>
+                              <a class="mt-10" routerLink="/forgetPassword">Forget Password ?</a>
+                            </div>
+                        <!-- </div> -->
+                        </div>
+                        
                         <br>
                        
                         <!-- <div class="form-check">
@@ -46,8 +67,9 @@
 
                     </form>
                     {{userStatus}}
-                </div>
-            </div>
+                    <small class="text-danger" *ngIf="inValidLogin">{{errorMessage}}</small>
+                <!-- </div> -->
+            <!-- </div> -->
             <!-- </div> -->
             <!-- </div> -->
         </div>
